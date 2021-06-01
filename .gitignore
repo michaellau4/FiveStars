@@ -1,0 +1,9 @@
+Gemfile.lock
+.DS_store
+node_modules/
+tmp/
+vendor/
+master.key
+bundle.js
+bundle.js.map
+log/
