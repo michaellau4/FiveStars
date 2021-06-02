@@ -14,16 +14,27 @@ import GreetingContainer from "./greeting/greeting_container";
 
 const App = () => (
   <div>
-    <header>
-      <Link to="/" className="header-link">
-        <h1>FIVESTARS</h1>
-      </Link>
-      <GreetingContainer />
-    </header>
-    <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    </Switch>
+    <div className="homepage-hero">
+      <nav className="header-nav">
+        <div className="header-links">
+          <a href="">Write a Review</a>
+          <a href="">Events</a>
+          <a href="">Talk</a>
+        </div>
+        <div className="header-account-links">
+          <header>
+            <Link to="/" className="header-link">
+              <h1>FIVESTARS</h1>
+            </Link>
+            <GreetingContainer />
+          </header>
+          <Switch>
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+          </Switch>
+        </div>
+      </nav>
+    </div>
   </div>
 );
 

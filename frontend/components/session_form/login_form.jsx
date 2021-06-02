@@ -7,7 +7,9 @@ class LoginForm extends React.Component {
       username: '',
       password: ''
     };
+    this.info = {username: "guest", password: "password"};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
   
   componentWillUnmount() {
@@ -38,6 +40,12 @@ class LoginForm extends React.Component {
     );
   }
 
+  guestLogin(e) {
+    e.preventDefault();
+    console.log(this.info);
+    this.props.processForm(this.info);
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -63,9 +71,11 @@ class LoginForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="login-submit" type="submit" value={this.props.formType} />
+            <br />
           </div>
         </form>
+        <button onClick={this.guestLogin}>Login as Guest</button>
       </div>
     );
   }
