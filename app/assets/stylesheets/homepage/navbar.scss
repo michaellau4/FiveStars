@@ -1,26 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;900&display=swap');
 $roboto: 'Roboto', sans-serif;
 
-.homepage-hero {
-  display: flex;
-  height: 600px;
-  font-family: $roboto;
-}
+// .homepage-hero {
+//   display: flex;
+//   height: 600px;
+//   font-family: $roboto;
+// }
 
-.header-nav {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 36px;
-}
+// .header-nav {
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   height: 36px;
+// }
 
-.header-links {
+// .header-links {
+//   display: flex;
+//   justify-content: space-between;
+//   height: 36px;
+// }
+
+// .header-account-links {
+//   justify-content: flex-end;
+//   height: 36px;
+// }
+
+.nav-header {
   display: flex;
+  position: relative;
+  top: 10px;
+  margin: 0 15%;
   justify-content: space-between;
-  height: 36px;
+  span a {
+    margin: 0 10px;
+  }
 }
 
-.header-account-links {
-  justify-content: flex-end;
-  height: 36px;
+.homepage-hero {
+  background-image: url(https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/884c12b285fc/assets/img/home/hero_photos/TdClV4QlpucjFX4GdPc2QQ.jpg);
+  background-position: 50%;
+  background-size: cover;
+  padding-top: 30px;
+  height: 570px;
 }

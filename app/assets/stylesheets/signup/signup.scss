@@ -1,0 +1,20 @@
+.session-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-nav {
+  display: flex;
+  width: 100%;
+  background-color: #D32323;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+}
+
+.login-form-container {
+  height: 340px;
+  width: 300px;
+}

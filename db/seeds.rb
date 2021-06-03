@@ -8,4 +8,4 @@
 
 User.delete_all
 
-u1 = User.create!(username: 'guest', email: 'guest', password: 'password')
+u1 = User.create!(email: 'guest', first_name: 'guest', last_name: 'guest', zipcode: '00000', password: 'password')
