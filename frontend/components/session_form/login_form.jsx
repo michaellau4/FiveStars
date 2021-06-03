@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class LoginForm extends React.Component {
   }
   
   componentWillUnmount() {
-    
+    this.props.receiveErrors([]);
   }
 
   update(field) {
@@ -50,7 +51,9 @@ class LoginForm extends React.Component {
     return (
       <div className="session-page">
         <div className="session-nav">
-          <h3>ICON</h3>
+          <Link to="/" className="header-link">
+            <h1>Yelp</h1>
+          </Link>
         </div>
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -79,7 +82,9 @@ class LoginForm extends React.Component {
               <br />
             </div>
           </form>
-          <button onClick={this.guestLogin}>Login as Guest</button>
+          <form>
+            <button onClick={this.guestLogin}>Login as Guest</button>
+          </form>
         </div>
       </div>
     );

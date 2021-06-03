@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class SessionForm extends React.Component {
   }
   
   componentWillUnmount() {
-    
+    this.props.receiveErrors([]);
   }
 
   update(field) {
@@ -45,7 +46,9 @@ class SessionForm extends React.Component {
     return (
       <div className="session-page">
         <div className="session-nav">
-          <h3>ICON</h3>
+          <Link to="/" className="header-link">
+            <h1>Yelp</h1>
+          </Link>
         </div>
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">

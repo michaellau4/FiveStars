@@ -18,7 +18,7 @@ const App = ({currentUser, loggedIn}) => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
-      <Route exact path="/" component={SplashContainer} />
+      <Route component={SplashContainer} />
     </Switch> 
   </div>
 );

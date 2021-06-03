@@ -34,6 +34,11 @@ $roboto: 'Roboto', sans-serif;
   span a {
     margin: 0 10px;
   }
+  a {
+    font-family: $roboto;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
 }
 
 .homepage-hero {
