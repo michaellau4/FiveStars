@@ -50,55 +50,60 @@ class SessionForm extends React.Component {
             <h1>Yelp</h1>
           </Link>
         </div>
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            <br/>
-            Please {this.props.formType} or {this.props.navLink}
-            {this.renderErrors()}
-            <div className="login-form">
+        <div className="main-content">
+          <div className="login-form-container">
+            <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
-              <label>First:
-                <input type="text"
-                  value={this.state.first_name}
-                  onChange={this.update('first_name')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>Last:
-                <input type="text"
-                  value={this.state.last_name}
-                  onChange={this.update('last_name')}
-                  className="login-input"
-                />
-              </label>
-              <label>Email:
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>ZIP Code:
-                <input type="password"
-                  value={this.state.zipcode}
-                  onChange={this.update('zipcode')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <input className="session-submit" type="submit" value={this.props.formType} />
-            </div>
-          </form>
+              Please {this.props.formType} or {this.props.navLink}
+              {this.renderErrors()}
+              <div className="login-form">
+                <br/>
+                <label>First:
+                  <input type="text"
+                    value={this.state.first_name}
+                    onChange={this.update('first_name')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <label>Last:
+                  <input type="text"
+                    value={this.state.last_name}
+                    onChange={this.update('last_name')}
+                    className="login-input"
+                  />
+                </label>
+                <label>Email:
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <label>Password:
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <label>ZIP Code:
+                  <input type="password"
+                    value={this.state.zipcode}
+                    onChange={this.update('zipcode')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <input className="session-submit" type="submit" value={this.props.formType} />
+              </div>
+            </form>
+          </div>
+          <div className="picture-container">
+            <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
+          </div>
         </div>
       </div>
     );
