@@ -293,6 +293,8 @@ var App = function App(_ref) {
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_2__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__.AuthRoute, {
+    exact: true,
+    path: "/",
     component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_5__.default
   })));
 };
