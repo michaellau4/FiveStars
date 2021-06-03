@@ -11,6 +11,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
+import NotFoundPage from './notfound/not_found';
 
 
 const App = ({currentUser, loggedIn}) => (
@@ -18,7 +19,8 @@ const App = ({currentUser, loggedIn}) => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
-      <Route component={SplashContainer} />
+      <Route exact path="/" component={SplashContainer} />
+      <Route path="*" component={NotFoundPage}/>
     </Switch> 
   </div>
 );

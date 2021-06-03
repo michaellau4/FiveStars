@@ -1,22 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
-const Greeting = ({currentUser, logout}) => {
-  console.log(currentUser);
+const Greeting = (props) => {
   const sessionLinks = () => (
   <nav className="login-signup">
-    <Link to="/login">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup">Sign up!</Link>
+    <Link to="/login">Log In</Link>
+    &nbsp; &nbsp;
+    <button className="signup-button" onClick={()=>props.history.push("/signup")}> 
+    Sign Up</button>
   </nav>
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">{currentUser.first_name}</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
+      <h2 className="header-name">{props.currentUser.first_name}</h2>
+      <button className="header-button" onClick={props.logout}>Log Out</button>
     </hgroup>
   );
-  return currentUser ? personalGreeting() : sessionLinks();
+  return props.currentUser ? personalGreeting() : sessionLinks();
 };
 
-export default Greeting;
+export default withRouter(Greeting);

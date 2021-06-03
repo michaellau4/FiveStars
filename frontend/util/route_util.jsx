@@ -22,6 +22,10 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
+const Default = ({ component: Component, path }) => (
+  <Route></Route>
+);
+
 const mapStateToProps = state => (
   {loggedIn: Boolean(state.session.id)}
 );

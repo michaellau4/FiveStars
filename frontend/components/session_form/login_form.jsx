@@ -59,32 +59,34 @@ class LoginForm extends React.Component {
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
-              Please {this.props.formType} or {this.props.navLink}
+              New to FiveStars? {this.props.navLink}
               {this.renderErrors()}
               <div className="login-form">
                 <br/>
-                <label>Email:
+                <label>
                   <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="login-input"
+                    placeholder="Email"
                   />
                 </label>
                 <br/>
-                <label>Password:
+                <label>
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
                     className="login-input"
+                    placeholder="Password"
                   />
                 </label>
                 <br/>
-                <input className="login-submit" type="submit" value={this.props.formType} />
+                <button className="session-submit"><span>Log In</span></button>
                 <br />
               </div>
             </form>
             <form>
-              <button onClick={this.guestLogin}>Login as Guest</button>
+              <button className="session-submit" onClick={this.guestLogin}><span>Log In As Guest</span></button>
             </form>
           </div>
           <div className="picture-container">
