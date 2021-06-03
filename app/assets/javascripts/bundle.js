@@ -825,7 +825,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('password'),
         className: "login-input"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "ZIP Code:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        type: "password",
+        type: "text",
         value: this.state.zipcode,
         onChange: this.update('zipcode'),
         className: "login-input"

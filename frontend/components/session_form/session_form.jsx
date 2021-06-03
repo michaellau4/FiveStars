@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
                 </label>
                 <br/>
                 <label>ZIP Code:
-                  <input type="password"
+                  <input type="text"
                     value={this.state.zipcode}
                     onChange={this.update('zipcode')}
                     className="login-input"
