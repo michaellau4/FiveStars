@@ -51,9 +51,11 @@ class LoginForm extends React.Component {
     return (
       <div className="session-page">
         <div className="session-nav">
-          <Link to="/" className="header-link">
-            <h1>Yelp</h1>
-          </Link>
+          <div className="logo-container">
+            <Link to="/" className="header-link">
+              <img className="logo" src="https://i.imgur.com/v4VEQlh.png"/>
+            </Link>
+          </div>
         </div>
         <div className="main-content">
           <div className="login-form-wrapper">

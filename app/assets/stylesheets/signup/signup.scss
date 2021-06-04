@@ -120,3 +120,14 @@
   height: 536px;
   background: url(https://s3-media0.fl.yelpcdn.com/assets/public/footer_cityscape.yji-573fa19c843556eac5a998fc6d1f80f8.png) no-repeat bottom;
 }
+.logo-container {
+  display: flex;
+  justify-content: center;
+  height: 64px;
+  width: 990px;
+  object-fit: contain;
+}
+.logo {
+  max-width: 100%;
+  height: 64px;
+}
