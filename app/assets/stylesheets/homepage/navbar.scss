@@ -25,12 +25,18 @@ $roboto: 'Roboto', sans-serif;
 //   height: 36px;
 // }
 
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
 .nav-header {
   display: flex;
   position: relative;
   top: 10px;
   margin: 0 15%;
   justify-content: space-between;
+  width: 960px;
   span a {
     margin: 0 10px;
   }

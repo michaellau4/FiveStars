@@ -11,13 +11,15 @@ class Navbar extends React.Component {
   onSplash() {
     return (
       <div className="homepage-hero">
-        <div className="nav-header">
-          <span>
-            <a>Write a Review</a>
-            <a>Events</a>
-            <a>Talk</a>
-          </span>
-          <GreetingContainer/>
+        <div className="nav-container">
+          <div className="nav-header">
+            <span>
+              <a>Write a Review</a>
+              <a>Events</a>
+              <a>Talk</a>
+            </span>
+            <GreetingContainer/>
+          </div>
         </div>
       </div>
     )

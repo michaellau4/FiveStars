@@ -1,0 +1,35 @@
+.drop-down-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-img img {
+  border-style: none;
+  border-radius: 5px;
+}
+
+.drop-down-avatar:hover {
+  cursor: pointer;
+}
+
+.drop-down-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  height: 240px;
+  width: 235px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.logout-button {
+
+}
+
+h3 {
+  font-family: $roboto;
+}
