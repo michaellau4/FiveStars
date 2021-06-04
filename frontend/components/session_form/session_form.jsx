@@ -51,67 +51,80 @@ class SessionForm extends React.Component {
           </Link>
         </div>
         <div className="main-content">
-          <div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-              <br/>
-              Already on FiveStars? {this.props.navLink}
-              {this.renderErrors()}
-              <div className="login-form">
+          <div className="login-form-wrapper">
+            <div className="login-form-container">
+              <form onSubmit={this.handleSubmit} className="login-form-box">
                 <br/>
-                <div className="name-container">
+                Already on FiveStars? {this.props.navLink}
+                {this.renderErrors()}
+                <div className="login-form">
+                  <br/>
+                  <div className="name-container">
+                    <label>
+                      <input type="text"
+                        value={this.state.first_name}
+                        onChange={this.update('first_name')}
+                        className="login-input"
+                        placeholder="First Name"
+                      />
+                    </label>
+                    <br/>
+                    <label>
+                      <input type="text"
+                        value={this.state.last_name}
+                        onChange={this.update('last_name')}
+                        className="login-input"
+                        placeholder="Last Name"
+                      />
+                    </label>
+                  </div>
+                  <br />
                   <label>
                     <input type="text"
-                      value={this.state.first_name}
-                      onChange={this.update('first_name')}
+                      value={this.state.email}
+                      onChange={this.update('email')}
                       className="login-input"
-                      placeholder="First Name"
+                      placeholder="Email"
+                    />
+                  </label>
+                  <br/>
+                  <label>
+                    <input type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      className="login-input"
+                      placeholder="Password"
                     />
                   </label>
                   <br/>
                   <label>
                     <input type="text"
-                      value={this.state.last_name}
-                      onChange={this.update('last_name')}
+                      value={this.state.zipcode}
+                      onChange={this.update('zipcode')}
                       className="login-input"
-                      placeholder="Last Name"
+                      placeholder="ZIP"
                     />
                   </label>
+                  <br/>
+                  <button className="session-submit"><span>Sign Up</span></button>
                 </div>
-                <br />
-                <label>
-                  <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="login-input"
-                    placeholder="Email"
-                  />
-                </label>
-                <br/>
-                <label>
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="login-input"
-                    placeholder="Password"
-                  />
-                </label>
-                <br/>
-                <label>
-                  <input type="text"
-                    value={this.state.zipcode}
-                    onChange={this.update('zipcode')}
-                    className="login-input"
-                    placeholder="ZIP"
-                  />
-                </label>
-                <br/>
-                <button className="session-submit"><span>Sign Up</span></button>
-                
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
-          <div className="picture-container">
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
+          <div className="picture-wrapper">
+            <div className="picture-container">
+              <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="main-footer-container">
+          <div className="main-footer">
+            <div className="footer-content-container">
+
+            </div>
+            <footer className="footer-background">
+
+            </footer>
           </div>
         </div>
       </div>

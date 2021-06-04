@@ -56,41 +56,55 @@ class LoginForm extends React.Component {
           </Link>
         </div>
         <div className="main-content">
-          <div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-              <br/>
-              New to FiveStars? {this.props.navLink}
-              {this.renderErrors()}
-              <div className="login-form">
+          <div className="login-form-wrapper">
+            <div className="login-form-container">
+              <form onSubmit={this.handleSubmit} className="login-form-box">
                 <br/>
-                <label>
-                  <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="login-input"
-                    placeholder="Email"
-                  />
-                </label>
-                <br/>
-                <label>
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="login-input"
-                    placeholder="Password"
-                  />
-                </label>
-                <br/>
-                <button className="session-submit"><span>Log In</span></button>
-                <br />
-              </div>
-            </form>
-            <form>
-              <button className="session-submit" onClick={this.guestLogin}><span>Log In As Guest</span></button>
-            </form>
+                New to FiveStars? {this.props.navLink}
+                {this.renderErrors()}
+                <div className="login-form">
+                  <br/>
+                  <label>
+                    <input type="text"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      className="login-input"
+                      placeholder="Email"
+                    />
+                  </label>
+                  <br/>
+                  <label>
+                    <input type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      className="login-input"
+                      placeholder="Password"
+                    />
+                  </label>
+                  <br/>
+                  <button className="session-submit"><span>Log In</span></button>
+                  <br />
+                </div>
+              </form>
+              <form>
+                <button className="session-submit" onClick={this.guestLogin}><span>Log In As Guest</span></button>
+              </form>
+            </div>
           </div>
-          <div className="picture-container">
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
+          <div className="picture-wrapper">
+            <div className="picture-container">
+              <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="main-footer-container">
+          <div className="main-footer">
+            <div className="footer-content-container">
+
+            </div>
+            <footer className="footer-background">
+
+            </footer>
           </div>
         </div>
       </div>

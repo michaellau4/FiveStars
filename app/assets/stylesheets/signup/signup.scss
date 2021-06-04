@@ -12,14 +12,15 @@
   background-color: #D32323;
   align-items: center;
   justify-content: center;
-  height: 52px;
+  height: 64px;
 }
 
 .main-content {
   display: flex;
-  width: 100%;
+  width: 990px;
   justify-content: center;
   align-items: center;
+  height: 771px;
 }
 
 .login-form-container {
@@ -28,11 +29,11 @@
 }
 
 .picture-container {
-  width: 300px;
-  height: 400px;
+  width: 380px;
+  height: 354px;
   img {
-    width: 300px;
-    height: 400px;
+    width: 380px;
+    height: 342px;
     object-fit: scale-down;
   }
 }
@@ -42,7 +43,7 @@
   flex-direction: column;
   vertical-align: baseline;
   input {
-    width: calc(100% - 4px);
+    width: 100%;
     padding: 0px;
     height: 30px;
     border-radius: 3px;
@@ -56,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   input {
-    width: calc(100% - 4px);
+    width: 100%;
     border-radius: 3px;
     box-sizing: border-box;
     border: 1px solid #999;
@@ -93,4 +94,29 @@
   .signup-link {
     background-color: #666;
   }
+}
+
+.login-form-wrapper {
+  padding-right: 63px;
+}
+
+.picture-wrapper {
+  padding-left: 12px;
+  margin-top: -200px;
+}
+
+.main-footer-container {
+  display: flex;
+  background-color: rgb(242, 242, 242);
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  width: 990px;
+  height: 536px;
+  background: url(https://s3-media0.fl.yelpcdn.com/assets/public/footer_cityscape.yji-573fa19c843556eac5a998fc6d1f80f8.png) no-repeat bottom;
 }
