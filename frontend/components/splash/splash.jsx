@@ -5,9 +5,12 @@ const Splash = (props) => {
   return (
     <div>
       <Navbar/>
-      <div className="random">
-          <h3>hello</h3>
+      <div className="main-content-splash-container">
       </div>
+
+      <div>
+      </div>
+
       <div className="main-footer-container">
           <div className="main-footer">
             <div className="footer-content-container">

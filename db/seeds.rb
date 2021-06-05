@@ -9,3 +9,8 @@
 User.delete_all
 
 u1 = User.create!(email: 'guest', first_name: 'guest', last_name: 'guest', zipcode: '00000', password: 'password')
+
+Business.delete_all
+
+b1 = Business.create!(business_name: "Egghead", address: "949 Ruff Dr San Jose", city: "San Jose", state: "CA", zip: "95110", phone_number: "(510)552-0304", website_url: "eggheadcafe.net", owner_id: 4)
+

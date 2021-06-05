@@ -1,5 +1,4 @@
 import React from "react";
-import { Provider } from 'react-redux';
 import {
   Route,
   Redirect,
@@ -12,13 +11,15 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import NotFoundPage from './notfound/not_found';
+import BusinessContainer from './business/business_container';
 
 
-const App = ({currentUser, loggedIn}) => (
+const App = () => (
   <div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
+      <Route exact path="/businesses/:businessId" component={BusinessContainer}/>
       <Route exact path="/" component={SplashContainer} />
       <Route path="*" component={NotFoundPage}/>
     </Switch> 
