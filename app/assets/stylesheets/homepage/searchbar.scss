@@ -1,0 +1,48 @@
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.main-logo {
+
+  img {
+    width: 220px;
+    height: 80px;
+    object-fit: cover;
+  }
+}
+
+.main-search-bar {
+  display: flex;
+  background: white;
+  margin-top: 15px;
+  width: 980px;
+  height: 45px;
+  align-items: center;
+  input {
+  }
+
+  button {
+    display: flex;
+    height: 45px;
+    width: 60px;
+    background-color: #D32323;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.find-input-wrapper {
+  width: 400px;
+}
+
+.near-input-wrapper {
+  width: 400px;
+}
+
+.search-icon {
+  color: white;
+}
