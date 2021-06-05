@@ -1,3 +1,51 @@
 // Place all the styles related to the api/businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.main-content-hot-businesses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  h2, h3 {
+    font-family: $roboto;
+    color: #D32323;
+  }
+}
+
+.hot-business-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px; 
+}
+
+.business-card {
+  margin: 15px;
+}
+
+.locations-container {
+  display: flex;
+  justify-content: center;
+  width: 990px;
+  border-bottom: 1px solid #666;
+  margin: 10px;
+  li {
+    display: flex;
+    margin: 4px;
+    font-family: $roboto;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+.location-header {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+p {
+  font-family: $roboto;
+}
