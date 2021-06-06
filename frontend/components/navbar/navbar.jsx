@@ -12,31 +12,40 @@ class Navbar extends React.Component {
   onSplash() {
     return (
       <div className="homepage-hero">
-        <div className="nav-container">
-          <div className="nav-header">
-            <span>
-              <a>Write a Review</a>
-              <a>Events</a>
-              <a>Talk</a>
-            </span>
-            <GreetingContainer/>
-          </div>
-        </div>
-        <div className="splash-content">
-          <div className="main-logo">
-            <img src="https://i.imgur.com/v4VEQlh.png" alt="" />
-          </div>
-          <div className="main-search-bar">
-            <div className="find-input-wrapper">
-              Find
-              <input type="text" />
+        <div className="y-container">
+          <div className="nav-container">
+            <div className="nav-header">
+              <span>
+                <a>Write a Review</a>
+                <a>Events</a>
+                <a>Talk</a>
+              </span>
+              <GreetingContainer/>
             </div>
-            <div className="near-input-wrapper">
-              Near
-              <input type="text" />
-
+          </div>
+          <div className="splash-content">
+            <div className="main-logo">
+              <img src="https://i.imgur.com/v4VEQlh.png" alt="" />
             </div>
-            <button><GoSearch className="search-icon"/></button>
+            <div className="main-search-bar">
+              <div className="find-input-wrapper">
+                <span>
+                  <p>
+                    Find
+                  </p>
+                </span>
+                <input type="text" />
+              </div>
+              <div className="near-input-wrapper">
+                <span>
+                  <p>
+                    Near
+                  </p>
+                </span>
+                <input type="text" />
+              </div>
+              <button><GoSearch className="search-icon"/></button>
+            </div>
           </div>
         </div>
       </div>
