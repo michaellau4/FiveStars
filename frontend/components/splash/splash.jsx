@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
 import { GoSearch } from "react-icons/go";
+import {Link} from 'react-router-dom';
+import BusinessContainer from '../business/business_container';
 
 
 const Splash = (props) => {
@@ -27,7 +29,7 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/orBoJAlG4f4cC1tiFL-ByA/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3>Egghead</h3>  
+                <h3><Link to="/businesses/2">Egghead</Link></h3>  
                 <p>Breakfast, Sandwiches, Coffee and Tea</p>
                 <p>San Jose</p>
               </div>
