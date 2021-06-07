@@ -29,7 +29,7 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/orBoJAlG4f4cC1tiFL-ByA/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3><Link to="/businesses/2">Egghead</Link></h3>  
+                <h3><Link to="/businesses/3">Egghead</Link></h3>  
                 <p>Breakfast, Sandwiches, Coffee and Tea</p>
                 <p>San Jose</p>
               </div>
@@ -39,7 +39,7 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/EQgpR2SsWpHoeex_WjmjLw/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3>Mochill Mochi Donut</h3>
+                <h3><Link to="/businesses/4">Mochill Mochi Donut</Link></h3> 
                 <p>Donuts, Dessert</p>
                 <p>San Jose</p>
               </div>
@@ -49,7 +49,7 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/qhDrJ5AGkrvCV6v8bWM1sw/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3>Urban Ritual</h3>
+                <h3><Link to="/businesses/5">Urban Ritual</Link></h3> 
                 <p>Drinks, Bubble Tea</p>
                 <p>San Jose</p>
               </div>

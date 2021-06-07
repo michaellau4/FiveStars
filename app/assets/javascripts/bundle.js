@@ -195,11 +195,14 @@ function _setPrototypeOf(o, p) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RECEIVE_BUSINESS": () => (/* binding */ RECEIVE_BUSINESS),
-/* harmony export */   "fetchBusiness": () => (/* binding */ fetchBusiness)
+/* harmony export */   "RECEIVE_ALL_BUSINESSES": () => (/* binding */ RECEIVE_ALL_BUSINESSES),
+/* harmony export */   "fetchBusiness": () => (/* binding */ fetchBusiness),
+/* harmony export */   "fetchBusinesses": () => (/* binding */ fetchBusinesses)
 /* harmony export */ });
 /* harmony import */ var _util_business_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/business_api_util */ "./frontend/util/business_api_util.js");
 
 var RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
+var RECEIVE_ALL_BUSINESSES = 'RECEIVE_ALL_BUSINESSES';
 
 var receiveBusiness = function receiveBusiness(business) {
   return {
@@ -208,10 +211,24 @@ var receiveBusiness = function receiveBusiness(business) {
   };
 };
 
+var receiveAllBusinesses = function receiveAllBusinesses(businesses) {
+  return {
+    type: RECEIVE_ALL_BUSINESSES,
+    businesses: businesses
+  };
+};
+
 var fetchBusiness = function fetchBusiness(businessId) {
   return function (dispatch) {
     return _util_business_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchBusiness(businessId).then(function (business) {
       return dispatch(receiveBusiness(business));
+    });
+  };
+};
+var fetchBusinesses = function fetchBusinesses() {
+  return function (dispatch) {
+    return _util_business_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchBusinesses().then(function (businesses) {
+      return dispatch(receiveAllBusinesses(businesses));
     });
   };
 };
@@ -355,6 +372,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _search_nav_bar_search_nav_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../search_nav_bar/search_nav_bar */ "./frontend/components/search_nav_bar/search_nav_bar.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -379,6 +397,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Business = /*#__PURE__*/function (_React$Component) {
   _inherits(Business, _React$Component);
 
@@ -390,24 +409,45 @@ var Business = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Business);
 
     _this = _super.call(this, props);
-    console.log(_this.props);
+    _this.state = {
+      hasFetched: false
+    };
     return _this;
   }
 
   _createClass(Business, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchBusiness(this.props.match.params.businessId);
+      var _this2 = this;
+
+      this.props.fetchBusiness(this.props.match.params.businessId).then(function () {
+        _this2.setState({
+          hasFetched: true
+        });
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.business !== prevProps.business) {
+        this.props.fetchBusiness(this.props.business.id);
+      }
+    }
+  }, {
+    key: "shouldComponentUpdate",
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      if (this.state.hasFetched) {
+        return false;
+      }
+
+      return true;
     }
   }, {
     key: "render",
     value: function render() {
-      if (!this.props.business) return null;
       var business = this.props.business;
-      console.log(hello);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "business-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "HELLO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "HELLO", business.business_name)));
+      if (!business) return null;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_nav_bar_search_nav_bar__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, business.business_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Menu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Location & Hours", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, business.address), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, business.city), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, business.state), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, business.zip), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Get directions"))));
     }
   }]);
 
@@ -826,6 +866,33 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/search_nav_bar/search_nav_bar.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/search_nav_bar/search_nav_bar.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
+
+
+
+var SearchNav = function SearchNav() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "",
+    alt: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__.default, null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchNav);
 
 /***/ }),
 
@@ -1314,7 +1381,7 @@ var Splash = function Splash(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "business-card-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-    to: "/businesses/2"
+    to: "/businesses/3"
   }, "Egghead")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Breakfast, Sandwiches, Coffee and Tea"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "San Jose")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "business-card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -1322,14 +1389,18 @@ var Splash = function Splash(props) {
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "business-card-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Mochill Mochi Donut"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Donuts, Dessert"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "San Jose")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    to: "/businesses/4"
+  }, "Mochill Mochi Donut")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Donuts, Dessert"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "San Jose")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "business-card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "https://s3-media0.fl.yelpcdn.com/bphoto/qhDrJ5AGkrvCV6v8bWM1sw/ls.jpg",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "business-card-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Urban Ritual"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Drinks, Bubble Tea"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "San Jose")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    to: "/businesses/5"
+  }, "Urban Ritual")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Drinks, Bubble Tea"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "San Jose")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "main-footer-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "main-footer"
@@ -1392,17 +1463,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _actions_business_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/business_actions */ "./frontend/actions/business_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var businessesReducer = function businessesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  console.log(action);
 
   switch (action.type) {
+    case _actions_business_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_ALL_BUSINESSES:
+      return action.businesses;
+
     case _actions_business_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_BUSINESS:
-      return Object.assign({}, state, action.product);
+      return Object.assign({}, state, _defineProperty({}, action.business.id, action.business));
 
     default:
       return state;
@@ -1637,12 +1712,19 @@ var configureStore = function configureStore() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "fetchBusiness": () => (/* binding */ fetchBusiness)
+/* harmony export */   "fetchBusiness": () => (/* binding */ fetchBusiness),
+/* harmony export */   "fetchBusinesses": () => (/* binding */ fetchBusinesses)
 /* harmony export */ });
 var fetchBusiness = function fetchBusiness(businessId) {
   return $.ajax({
-    method: "GET",
+    method: 'GET',
     url: "/api/businesses/".concat(businessId)
+  });
+};
+var fetchBusinesses = function fetchBusinesses() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/businesses'
   });
 };
 
