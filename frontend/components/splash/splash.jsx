@@ -3,6 +3,8 @@ import Navbar from '../navbar/navbar';
 import { GoSearch } from "react-icons/go";
 import {Link} from 'react-router-dom';
 import BusinessContainer from '../business/business_container';
+import { GoFlame } from "react-icons/go";
+
 
 
 const Splash = (props) => {
@@ -29,9 +31,10 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/orBoJAlG4f4cC1tiFL-ByA/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3><Link to="/businesses/3">Egghead</Link></h3>  
+                <h3><Link to="/businesses/1">Egghead</Link></h3>  
                 <p>Breakfast, Sandwiches, Coffee and Tea</p>
                 <p>San Jose</p>
+                <p className="hot-business"><GoFlame/> Opened 4 weeks ago</p>               
               </div>
             </div>
           </div>
@@ -39,9 +42,10 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/EQgpR2SsWpHoeex_WjmjLw/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3><Link to="/businesses/4">Mochill Mochi Donut</Link></h3> 
+                <h3><Link to="/businesses/2">Mochill Mochi Donut</Link></h3> 
                 <p>Donuts, Dessert</p>
                 <p>San Jose</p>
+                <p className="hot-business"><GoFlame/> Opened 3 weeks ago</p>
               </div>
             </div>
           </div>
@@ -49,9 +53,10 @@ const Splash = (props) => {
             <div>
               <img src="https://s3-media0.fl.yelpcdn.com/bphoto/qhDrJ5AGkrvCV6v8bWM1sw/ls.jpg" alt="" />
               <div className="business-card-content">
-                <h3><Link to="/businesses/5">Urban Ritual</Link></h3> 
+                <h3><Link to="/businesses/3">Urban Ritual</Link></h3> 
                 <p>Drinks, Bubble Tea</p>
                 <p>San Jose</p>
+                <p className="hot-business"><GoFlame/> Opened 6 weeks ago</p>
               </div>
             </div>
           </div>
@@ -59,15 +64,15 @@ const Splash = (props) => {
       </div>
 
       <div className="main-footer-container">
-          <div className="main-footer">
-            <div className="footer-content-container">
+        <div className="main-footer">
+          <div className="footer-content-container">
 
-            </div>
-            <footer className="footer-background">
-              <h3>bottom</h3>
-            </footer>
           </div>
+          <footer className="footer-background">
+            <h3>bottom</h3>
+          </footer>
         </div>
+      </div>
     </div>
   )
 };

@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
 $open-sans: 'Open Sans', sans-serif;
+$poppins: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+$poppins900: 'Poppins', sans-serif;
 
 .main-content-hot-businesses {
   display: flex;
@@ -23,6 +26,7 @@ $open-sans: 'Open Sans', sans-serif;
   padding: 30px;
   width: 990px;
 }
+
 
 .business-card {
   margin: 15px;
@@ -85,4 +89,46 @@ p {
     margin-top: 6px;
     font-size: 14px;
   }
+}
+
+.hot-business {
+  color: #f15c00;
+}
+
+.business-info-container {
+  overflow: hidden;
+  white-space: nowrap;
+  border-color: #eeeeef;
+  position: relative;
+}
+
+.business-title {
+  font-size: 48px;
+  font-family: $poppins900;
+  color: #fff;
+}
+
+.business-photo-container {
+  display: flex;
+  position: relative;
+}
+
+.photo-header-content {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  padding: 40px 64px;
+  margin: auto;
+}
+
+
+.search-nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

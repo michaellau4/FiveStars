@@ -7,6 +7,7 @@ class Business extends React.Component {
     this.state = {
       hasFetched: false
     }
+    console.log(this.props);
   }
 
   componentDidMount() {
@@ -31,22 +32,63 @@ class Business extends React.Component {
     let {business} = this.props
     if (!business) return null;
     return (
-      <div>
+      <div className="page-container">
         <SearchNav/>
-        <div>
-          {business.business_name}
-        </div>
-        <div>
-          Menu
-        </div>
-        <div>
-          Location & Hours
+        <div className="business-info-container">
+          <div className="business-photo-container">
+            {business.photoUrls.map((photoUrl, i) => (
+              <img src={photoUrl} key={i} alt="" />
+            ))
+            }
+            <div className="photo-header-content">
+              <div className="business-title">
+                {business.business_name}
+              </div>
+            </div>
+          </div>
           <div>
-            <span>{business.address}</span>
-            <span>{business.city}</span>
-            <span>{business.state}</span>
-            <span>{business.zip}</span>
-            <span>Get directions</span>
+            
+          </div>
+          <div className="tags">
+
+          </div>
+          <div>
+            Order Food
+
+          </div>
+          <div>
+            <div>
+              <div>
+                {business.website_url}
+              </div>
+              <div>
+                <span>Get Directions</span>
+                <span>{business.address}{business.city}{business.state}{business.zip}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            Location & Hours
+            <div>
+              <span>{business.address}</span>
+              <span>{business.city}</span>
+              <span>{business.state}</span>
+              <span>{business.zip}</span>
+              <span>Get directions</span>
+            </div>
+          </div>
+        </div>
+        <div className="reviews">
+
+        </div>
+        <div className="main-footer-container">
+          <div className="main-footer">
+            <div className="footer-content-container">
+
+            </div>
+            <footer className="footer-background">
+              <h3>bottom</h3>
+            </footer>
           </div>
         </div>
       </div>
