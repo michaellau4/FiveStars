@@ -16,12 +16,14 @@ b2 = Business.create!(business_name: "Mochill Mochi Donut", address: "675 Sarato
 b3 = Business.create!(business_name: "Urban Ritual", address: "100 N Almaden Ave", city: "San Jose", state: "CA", zip: "95110", phone_number: "(408)564-0925", website_url: "urbanritualcafe.com", owner_id: 4)
 b4 = Business.create!(business_name: "Sno-Crave Tea House", address: "43773 Boscell Rd", city: "Fremont", state: "CA", zip: "94538", phone_number: "(510)651-8888", website_url: "snocrave.com", owner_id: 4)
 b5 = Business.create!(business_name: "yakiniQ SJ", address: "1783 W San Carlos St", city: "San Jose", state: "CA", zip: "95128", phone_number: "(408)293-2668", website_url: "yesmeats.menu11.com", owner_id: 4)
-b6 = Business.create!(business_name: "Ramen Nagi", address: "541 Bryant St", city: "Palo Alto", state: "CA", zip: "94301")
-b7 = Business.create!(business_name: "Bitter+Sweet" address: "20560 Town Center Ln", city: "Cupertino", state: "CA", zip: "95014")
+b6 = Business.create!(business_name: "Ramen Nagi", address: "541 Bryant St", city: "Palo Alto", state: "CA", zip: "94301", website_url: "ramennagiusa.com", owner_id: 4)
 
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead1.jpeg"), filename: "egghead1.jpeg")
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead2.jpeg"), filename: "egghead2.jpeg")
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead3.jpeg"), filename: "egghead3.jpeg")
+b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead4.jpeg"), filename: "egghead4.jpeg")
+b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead5.jpeg"), filename: "egghead5.jpeg")
+
 
 b2.photos.attach(io: File.open("/Users/michaellau/Desktop/mochill1.jpeg"), filename: "mochill1.jpeg")
 b2.photos.attach(io: File.open("/Users/michaellau/Desktop/mochill2.jpeg"), filename: "mochill2.jpeg")
@@ -40,8 +42,4 @@ b5.photos.attach(io: File.open("/Users/michaellau/Desktop/yakiniq3.jpeg"), filen
 
 b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi1.jpeg"), filename: "ramennagi1.jpeg")
 b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi2.jpeg"), filename: "ramennagi2.jpeg")
-b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi3.jpeg"), filename: "ramennagi3.jpeg")
-
-b7.photos.attach(io: File.open("/Users/michaellau/Desktop/bittersweet1.jpeg"), filename: "bittersweet1.jpeg")
-b7.photos.attach(io: File.open("/Users/michaellau/Desktop/bittersweet2.jpeg"), filename: "bittersweet2.jpeg")
-b7.photos.attach(io: File.open("/Users/michaellau/Desktop/bittersweet3.jpeg"), filename: "bittersweet3.jpeg")
+b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi3.jpeg"), filename: "ramennagi3.jpeg") 
