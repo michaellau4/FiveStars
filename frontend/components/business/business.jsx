@@ -5,6 +5,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { RiDirectionLine } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
+import { useHistory } from 'react-router';
 
 class Business extends React.Component {
   constructor(props) {
@@ -13,6 +14,12 @@ class Business extends React.Component {
       hasFetched: false
     }
     console.log(this.props);
+  }
+
+  goToReview() {
+    e.preventDefault();
+    let history = useHistory();
+    history.push('/businesses/:businessId/createReview');
   }
 
   componentDidMount() {
@@ -89,7 +96,7 @@ class Business extends React.Component {
             </div>
             <div className="mid-section-main-content">
               <div className="review-button-container">
-                <button className="review-button"><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
+                <button className="review-button" onClick={this.goToReview}><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
               </div>
               <div className="locations-box">
                 <h3>Location & Hours</h3>

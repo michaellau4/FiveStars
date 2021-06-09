@@ -5,6 +5,13 @@ export const fetchReviews = (businessId) => (
   })
 );
 
+export const fetchReview = (businessId, reviewId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/businesses/${businessId}/reviews/${reviewId}`
+  })
+) 
+
 export const createReview = (review, businessId) => (
   $.ajax({
     method: 'POST',
