@@ -125,9 +125,10 @@
   justify-content: center;
   height: 64px;
   width: 990px;
-  object-fit: contain;
 }
+
 .logo {
-  max-width: 100%;
+  width: 120px;
   height: 64px;
+  object-fit: cover;
 }

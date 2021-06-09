@@ -22,8 +22,10 @@
   height: 240px;
   width: 235px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 70px;
   padding: 12px;
+  position: absolute;
+  z-index: 1;
 }
 
 .logout-button {
@@ -32,4 +34,28 @@
 
 h3 {
   font-family: $roboto;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin: 5px;
+  }
+}
+
+.find-friends {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin: 5px;
+  }
+}
+
+.account-settings {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin: 5px;
+  }
 }

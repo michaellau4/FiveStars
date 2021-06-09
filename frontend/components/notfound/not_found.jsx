@@ -7,7 +7,7 @@ class NotFoundPage extends React.Component {
       <div>
         <div className="session-nav error">
           <Link to="/" className="header-link">
-            <h1>Yelp</h1>
+            <img className="logo" src="https://i.imgur.com/v4VEQlh.png"/>
           </Link>
         </div>
         <div className="error-container">
