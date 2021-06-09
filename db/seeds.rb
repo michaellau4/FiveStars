@@ -24,7 +24,6 @@ b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead3.jpeg"), filen
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead4.jpeg"), filename: "egghead4.jpeg")
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead5.jpeg"), filename: "egghead5.jpeg")
 
-
 b2.photos.attach(io: File.open("/Users/michaellau/Desktop/mochill1.jpeg"), filename: "mochill1.jpeg")
 b2.photos.attach(io: File.open("/Users/michaellau/Desktop/mochill2.jpeg"), filename: "mochill2.jpeg")
 b2.photos.attach(io: File.open("/Users/michaellau/Desktop/mochill3.jpeg"), filename: "mochill3.jpeg")
