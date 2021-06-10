@@ -69,7 +69,7 @@ const Splash = (props) => {
 
           </div>
           <footer className="footer-background">
-            <h3>bottom</h3>
+        
           </footer>
         </div>
       </div>

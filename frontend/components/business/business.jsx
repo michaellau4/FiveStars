@@ -120,7 +120,7 @@ class Business extends React.Component {
 
             </div>
             <footer className="footer-background">
-              <h3>bottom</h3>
+              
             </footer>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchNav from '../search_nav_bar/search_nav_bar';
-import { FaStar } from 'react-icons/fa';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -64,16 +63,25 @@ class ReviewForm extends React.Component {
           <div>
             <form onSubmit={this.handleSubmit} className="review-form-box">
               <div className="inner-content-container">
-                <ul>
-                  <li>
-                    <FaStar/>
-                  </li>
-                </ul>
                 <div>
-                  <input type="text" onChange={this.handleRating} value={this.state.rating}/>
+                  <label>Not Good
+                    <input name="rating" type="radio" value="1"/>
+                  </label>
+                  <label>Could've been better
+                    <input name="rating" type="radio" value="2" />
+                  </label>
+                  <label>OK
+                    <input name="rating" type="radio" value="3"/>
+                  </label>
+                  <label>Good
+                    <input name="rating" type="radio" value="4"/>
+                  </label>
+                  <label>Great
+                    <input name="rating" type="radio" value="5"/>
+                  </label>
                 </div>
                 <div>
-                  <input className="review-content" type="text-area" onChange={this.handleBody} value={this.state.body}/>
+                  <input className="review-content" type="text-area" onChange={this.handleBody} value={this.state.body} placeholder="HAHAHAHAHAA"/>
                 </div>
               </div>
               <button className="review-submit">
