@@ -6,6 +6,7 @@ import { RiDirectionLine } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
 import ReviewIndexContainer from '../reviews/reviews_index_container';
+import {withRouter} from 'react-router-dom';
 
 class Business extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Business extends React.Component {
     this.state = {
       hasFetched: false
     }
-    console.log(this.props);
     this.goToReview = this.goToReview.bind(this);
   }
 
@@ -40,8 +40,112 @@ class Business extends React.Component {
   }
 
   render() {
-    let {business} = this.props
+    let {business} = this.props;
     if (!business) return null;
+    let totalReviews = business.reviews.length;
+    let avgRating = 0
+    business.reviews.map(review => (
+      avgRating += review.rating
+    ));
+    avgRating = avgRating / totalReviews;
+    let styleStars = {
+      width: "176px",
+      height: "32px",
+      display: "inlineBlock",
+      verticalAlign: "middle",
+      background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+      backgroundPosition: "0 -288px",
+    }
+    if (avgRating > 4.9) {
+
+    } else if (avgRating < 4.9 && avgRating >= 4.5) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -224px",
+      }
+      
+    } else if (avgRating < 4.5 && avgRating >= 4) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -256px",
+      }
+        
+    } else if (avgRating < 4 && avgRating >= 3.5) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -160px",
+      }
+      
+    } else if (avgRating < 3.5 && avgRating >= 3) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -192px"
+      }
+      
+    } else if (avgRating < 3 && avgRating >= 2.5) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -96px",
+      }
+    
+    } else if (avgRating < 2.5 && avgRating >= 2) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -128px",
+      }
+    } else if (avgRating < 2 && avgRating >= 1.5) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -32px",
+      }
+    } else if (avgRating < 1.5 && avgRating >= 1) {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 -64px",
+      }
+    } else {
+        styleStars = {
+        width: "176px",
+        height: "32px",
+        display: "inlineBlock",
+        verticalAlign: "middle",
+        background: 'url("https://s3-media0.fl.yelpcdn.com/assets/public/stars_v2.yji-52d3d7a328db670d4402843cbddeed89.png")',
+        backgroundPosition: "0 0px",
+      }
+    }
+    let stars = <div style={styleStars}></div>
     return (
       <div className="page-container">
         <SearchNav/>
@@ -55,6 +159,10 @@ class Business extends React.Component {
               <div className="photo-header-content">
                 <div className="business-title">
                   {business.business_name}
+                </div>
+                <div className="rating-info-container">
+                  {stars}
+                  <div className="rating-info">{totalReviews}&nbsp;reviews</div>
                 </div>
               </div>
             </div>
@@ -129,4 +237,4 @@ class Business extends React.Component {
   }
 }
 
-export default Business;
+export default withRouter(Business);

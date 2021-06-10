@@ -18,5 +18,20 @@ export const createReview = (review, businessId) => (
     url: `/api/businesses/${businessId}/reviews`,
     data: { review }
   })
-)
+);
+
+export const updateReview = (review, businessId) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/businesses/${businessId}/reviews/${review.id}`,
+    data: { review }
+  })
+);
+
+export const deleteReview = (review, businessId) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/businesses/${businessId}/reviews/${review.id}`
+  })
+);
 

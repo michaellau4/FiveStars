@@ -1,14 +1,16 @@
 import React from 'react';
 import SearchNav from '../search_nav_bar/search_nav_bar';
+import {withRouter} from 'react-router-dom';
 
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props)
+    console.log(this.props)
     this.state = {
       body: '',
-      rating: 0,
+      rating: 1,
       author_id: this.props.user_id,
-      hasFetched: false
+      business_id: this.props.business.id,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBody = this.handleBody.bind(this);
@@ -16,27 +18,28 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBusiness(this.props.match.params.businessId)
-      .then(() => {this.setState({hasFetched: true})})
+    this.props.fetchBusiness(this.props.business.id)
+      // .then(() => {this.setState({hasFetched: true})})
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.business !== this.props.business) {   
-      this.props.fetchBusiness(this.props.business.id)
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.business !== this.props.business) {   
+  //     this.props.fetchBusiness(this.props.business.id)
+  //   }
+  // }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.hasFetched) {
-      return false;
-    }
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.state.hasFetched) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    const review = Object.assign({}, this.state)
-    this.props.processForm(review, this.state.business_id);
+    const review = Object.assign({}, this.state);
+    this.props.processForm(review, this.props.business.business_id)
+      .then(() => (this.props.history.push(`/businesses/${this.props.business.id}`)));
   }
 
   handleBody(e) {
@@ -65,23 +68,23 @@ class ReviewForm extends React.Component {
               <div className="inner-content-container">
                 <div>
                   <label>Not Good
-                    <input name="rating" type="radio" value="1"/>
+                    <input name="rating" type="radio" checked={this.state.rating === 1} onChange={this.handleRating} value="1"/>
                   </label>
                   <label>Could've been better
-                    <input name="rating" type="radio" value="2" />
+                    <input name="rating" type="radio" checked={this.state.rating === 2} onChange={this.handleRating} value="2" />
                   </label>
                   <label>OK
-                    <input name="rating" type="radio" value="3"/>
+                    <input name="rating" type="radio" checked={this.state.rating === 3} onChange={this.handleRating} value="3"/>
                   </label>
                   <label>Good
-                    <input name="rating" type="radio" value="4"/>
+                    <input name="rating" type="radio" checked={this.state.rating === 4} onChange={this.handleRating} value="4"/>
                   </label>
                   <label>Great
-                    <input name="rating" type="radio" value="5"/>
+                    <input name="rating" type="radio" checked={this.state.rating === 5} onChange={this.handleRating} value="5"/>
                   </label>
                 </div>
                 <div>
-                  <input className="review-content" type="text-area" onChange={this.handleBody} value={this.state.body} placeholder="HAHAHAHAHAA"/>
+                  <input className="review-content" type="text-area" onChange={this.handleBody} value={this.state.body} placeholder="Placeholder for now"/>
                 </div>
               </div>
               <button className="review-submit">
@@ -95,4 +98,4 @@ class ReviewForm extends React.Component {
   }
 }
 
-export default ReviewForm;
+export default withRouter(ReviewForm);

@@ -12,7 +12,7 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render :index
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -20,7 +20,7 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = Review.find_by(id: params[:id])
-    if @review.update(review_params)
+    if @review.update(review_params) && @review.author_id === current_user.id
       render :index
     else
       render json: ['Did not fill in all areas'], status: 422
@@ -29,7 +29,7 @@ class Api::ReviewsController < ApplicationController
 
   def delete
     @review = Review.find_by(id: params[:id])
-    if @review && review.destroy
+    if @review && @review.author_id === current_user.id && review.destroy
     end
   end
 
