@@ -5,7 +5,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { RiDirectionLine } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
-import { useHistory } from 'react-router';
+import ReviewIndexContainer from '../reviews/reviews_index_container';
 
 class Business extends React.Component {
   constructor(props) {
@@ -14,12 +14,11 @@ class Business extends React.Component {
       hasFetched: false
     }
     console.log(this.props);
+    this.goToReview = this.goToReview.bind(this);
   }
 
   goToReview() {
-    e.preventDefault();
-    let history = useHistory();
-    history.push('/businesses/:businessId/createReview');
+    this.props.history.push(`/businesses/${this.props.business.id}/createReview`);
   }
 
   componentDidMount() {
@@ -96,7 +95,7 @@ class Business extends React.Component {
             </div>
             <div className="mid-section-main-content">
               <div className="review-button-container">
-                <button className="review-button" onClick={this.goToReview}><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
+                <button className="review-button" onClick={() => this.goToReview()}><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
               </div>
               <div className="locations-box">
                 <h3>Location & Hours</h3>
@@ -109,7 +108,8 @@ class Business extends React.Component {
                 </div>
               </div>
               <div className="reviews">
-                <h3>Recommended Reviews</h3>
+                <h3 className="reviews-title">Recommended Reviews</h3>
+                <ReviewIndexContainer business={business}/>
               </div>
             </div>
           </div>

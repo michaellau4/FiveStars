@@ -12,7 +12,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import NotFoundPage from './notfound/not_found';
 import BusinessContainer from './business/business_container';
-import ReviewFormContainet from './reviews/review_form_container';
+import ReviewFormContainer from './reviews/review_form_container';
 
 const App = () => (
   <div>

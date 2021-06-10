@@ -11,12 +11,13 @@ Business.delete_all
 
 u1 = User.create!(email: 'guest', first_name: 'guest', last_name: 'guest', zipcode: '00000', password: 'password')
 
-b1 = Business.create!(business_name: "Egghead", address: "949 Ruff Dr San Jose", city: "San Jose", state: "CA", zip: "95110", phone_number: "(510)552-0304", website_url: "eggheadcafe.net", owner_id: 4)
+b1 = Business.create!(business_name: "Egghead", address: "949 Ruff Dr San Jose", city: "San Jose", state: "CA", zip: "95110", phone_number: "(510) 552-0304", website_url: "eggheadcafe.net", owner_id: 4)
 b2 = Business.create!(business_name: "Mochill Mochi Donut", address: "675 Saratoga Ave Ste 108", city: "San Jose", state: "CA", zip: "95129", phone_number: "", website_url: "mochillsf.com", owner_id: 4)
-b3 = Business.create!(business_name: "Urban Ritual", address: "100 N Almaden Ave", city: "San Jose", state: "CA", zip: "95110", phone_number: "(408)564-0925", website_url: "urbanritualcafe.com", owner_id: 4)
-b4 = Business.create!(business_name: "Sno-Crave Tea House", address: "43773 Boscell Rd", city: "Fremont", state: "CA", zip: "94538", phone_number: "(510)651-8888", website_url: "snocrave.com", owner_id: 4)
-b5 = Business.create!(business_name: "yakiniQ SJ", address: "1783 W San Carlos St", city: "San Jose", state: "CA", zip: "95128", phone_number: "(408)293-2668", website_url: "yesmeats.menu11.com", owner_id: 4)
+b3 = Business.create!(business_name: "Urban Ritual", address: "100 N Almaden Ave", city: "San Jose", state: "CA", zip: "95110", phone_number: "(408) 564-0925", website_url: "urbanritualcafe.com", owner_id: 4)
+b4 = Business.create!(business_name: "Sno-Crave Tea House", address: "43773 Boscell Rd", city: "Fremont", state: "CA", zip: "94538", phone_number: "(510) 651-8888", website_url: "snocrave.com", owner_id: 4)
+b5 = Business.create!(business_name: "yakiniQ SJ", address: "1783 W San Carlos St", city: "San Jose", state: "CA", zip: "95128", phone_number: "(408) 293-2668", website_url: "yesmeats.menu11.com", owner_id: 4)
 b6 = Business.create!(business_name: "Ramen Nagi", address: "541 Bryant St", city: "Palo Alto", state: "CA", zip: "94301", website_url: "ramennagiusa.com", owner_id: 4)
+b7 = Business.create!(business_name: "Shuei-Do Manju Shop", address: "217 Jackson St", city: "San Jose", state: "CA", zip: "95112", phone_number: "(408) 294-4148", website_url: "japantownsanjose.org/shueidomanjushop.html", owner_id: 4)
 
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead1.jpeg"), filename: "egghead1.jpeg")
 b1.photos.attach(io: File.open("/Users/michaellau/Desktop/egghead2.jpeg"), filename: "egghead2.jpeg")

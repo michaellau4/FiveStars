@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :index
     else
-      render json: @review.errors,full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       render :index
     else
-      render json: ['Did not fill in all areas'], status 422
+      render json: ['Did not fill in all areas'], status: 422
     end
   end
 
