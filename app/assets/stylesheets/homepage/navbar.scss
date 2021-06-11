@@ -56,6 +56,29 @@ $roboto: 'Roboto', sans-serif;
   height: 570px;
 }
 
-.random {
-  height: 1000px;
+.search-icon {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.main-search-bar {
+  display: flex;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+    input {
+      font-size: 18px;
+      outline: 0;
+    }
+    span {
+      padding-right: 4px;
+      padding-left: 4px;
+      p {
+     
+        font-size: 18px;
+        color: #666666;
+      }
+    }
+  }
 }

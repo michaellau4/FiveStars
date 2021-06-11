@@ -17,13 +17,19 @@ $poppins900: 'Poppins', sans-serif;
     font-family: $roboto;
     color: #D32323;
   }
+  h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3125em;
+  }
 }
 
 .hot-business-container {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  padding: 30px;
+  padding: 15px;
   width: 990px;
 }
 
@@ -47,6 +53,9 @@ $poppins900: 'Poppins', sans-serif;
       width: 100%;
       height: 100%;
       // opacity: 0;
+    }
+    h3:first-child {
+      text-decoration: none;
     }
   }
 }
@@ -165,7 +174,7 @@ p {
   flex-direction: row-reverse;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 990px;
+  width: 60%;
   font-family: $open-sans;
   padding: 40px 64px;
 }
@@ -195,6 +204,7 @@ p {
 
 .mid-section-main-content {
   margin-right: 16px;
+  width: 80%;
 }
 
 .locations-box {
@@ -242,7 +252,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 200px;
   height: 100%;
   border: none;
   border-radius: 4px;
@@ -262,6 +272,8 @@ p {
 .rating-info-container {
   display: flex;
   align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .rating-info {
@@ -271,4 +283,35 @@ p {
   font-size: 16px;
   line-height: 22px;
   font-weight: 600px;
+}
+
+.search-nav-bar-container {
+  background-color: #fff
+}
+
+.update-delete-button {
+
+}
+
+.tag-container {
+  display: flex;
+}
+
+.business-tags {  
+  font-family: $open-sans;
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.business-city {
+  margin-left: 5px;
+}
+
+.business-state {
+  margin-left: 5px;
+}
+
+.business-zip {
+  margin-left: 5px;
 }

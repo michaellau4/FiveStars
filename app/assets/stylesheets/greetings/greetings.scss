@@ -26,10 +26,12 @@
   padding: 12px;
   position: absolute;
   z-index: 1;
+  box-shadow: 0 2px 8px rb(0 0 0 / 20%);
 }
 
 .logout-button {
-
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 h3 {
@@ -39,7 +41,15 @@ h3 {
 .about-me {
   display: flex;
   align-items: center;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 10px;
+  width: 100%;
+  font-size: 24px;
   h3 {
+    font: $roboto;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0073BB;
     margin: 5px;
   }
 }
@@ -47,7 +57,13 @@ h3 {
 .find-friends {
   display: flex;
   align-items: center;
+  font-size: 24px;
+  width: 100%;
   h3 {
+    font: $roboto;
+    font-size: 14px;
+    color: #0073BB;
+    font-weight: 600;
     margin: 5px;
   }
 }
@@ -55,7 +71,30 @@ h3 {
 .account-settings {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 24px;
   h3 {
+    font: $roboto;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0073BB;
     margin: 5px;
+  }
+}
+
+.user-info-container {
+  display: flex;
+  font: $roboto;
+  font-size: 16px;
+  color: #0073BB;
+  font-weight: 700;
+  line-height: 1.28em;
+  div {
+    padding-left: 10px;
+  }
+  img {
+
   }
 }

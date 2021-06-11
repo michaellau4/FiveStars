@@ -38,7 +38,9 @@ class Greeting extends React.Component {
             <div className="drop-down-items">
               <div className="user-info-container">
                 <img src="https://s3-media0.fl.yelpcdn.com/assets/public/user_60_square.yji-514f6997a3184af475d5adc800b6d0b1.png" />
-                <h3>{this.props.currentUser.first_name} {this.props.currentUser.last_name} </h3>
+                <div>
+                  <h3>{this.props.currentUser.first_name} {this.props.currentUser.last_name} </h3>
+                </div>
               </div>
               <div className="about-me">
                 <IoPerson/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
-import { GoSearch } from "react-icons/go";
+import Search from '../search/search';
 
 
 class Navbar extends React.Component {
@@ -27,25 +27,7 @@ class Navbar extends React.Component {
             <div className="main-logo">
               <img src="https://i.imgur.com/v4VEQlh.png" alt="" />
             </div>
-            <div className="main-search-bar">
-              <div className="find-input-wrapper">
-                <span>
-                  <p>
-                    Find
-                  </p>
-                </span>
-                <input type="text" />
-              </div>
-              <div className="near-input-wrapper">
-                <span>
-                  <p>
-                    Near
-                  </p>
-                </span>
-                <input type="text" />
-              </div>
-              <button><GoSearch className="search-icon"/></button>
-            </div>
+            <Search/>
           </div>
         </div>
       </div>

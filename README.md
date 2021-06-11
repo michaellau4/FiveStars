@@ -1,21 +1,18 @@
-# README
+# FiveStars
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FiveStars is a clone of yelp, a website that crowd sources reviews for businesses.
 
-Things you may want to cover:
+# Contents
 
-* Ruby version
+* Live Site
 
 * System dependencies
 
-* Configuration
+* Features
 
-* Database creation
+* User Authentication
 
-* Database initialization
-
-* How to run the test suite
+* Business Search Feature
 
 * Services (job queues, cache servers, search engines, etc.)
 

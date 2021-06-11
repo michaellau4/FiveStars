@@ -146,6 +146,7 @@ class Business extends React.Component {
       }
     }
     let stars = <div style={styleStars}></div>
+    console.log(business)
     return (
       <div className="page-container">
         <SearchNav/>
@@ -153,7 +154,7 @@ class Business extends React.Component {
           <div className="business-info-content">
             <div className="business-photo-container">
               {business.photoUrls.map((photoUrl, i) => (
-                <img src={photoUrl} key={i} alt="" />
+                <img key={i} src={photoUrl} key={i} alt="" />
               ))
               }
               <div className="photo-header-content">
@@ -164,11 +165,13 @@ class Business extends React.Component {
                   {stars}
                   <div className="rating-info">{totalReviews}&nbsp;reviews</div>
                 </div>
+                <div className="tag-container">
+                  {business.tags.map((tag) => (
+                    <div className="business-tags" key={tag.id}>{tag.tag}</div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="tags">
-
           </div>
         </div>
         <div className="mid-section-wrapper">
@@ -191,7 +194,20 @@ class Business extends React.Component {
                 <div className="directions">
                   <div>
                     <span>Get Directions</span>
-                    <span className="address">{business.address}{business.city}{business.state}{business.zip}</span>
+                    <span className="address">
+                      <span className="business-address">
+                        {business.address}
+                      </span>
+                      <span className="business-city">
+                        {business.city}
+                      </span>
+                      <span className="business-state">
+                        {business.state}
+                      </span>
+                      <span className="business-zip">
+                        {business.zip}
+                      </span>
+                    </span>
                   </div>
                   <RiDirectionLine/>
                 </div>
@@ -207,13 +223,20 @@ class Business extends React.Component {
               </div>
               <div className="locations-box">
                 <h3>Location & Hours</h3>
-                <div>
-                  <span>{business.address}</span>
-                  <span>{business.city}</span>
-                  <span>{business.state}</span>
-                  <span>{business.zip}</span>
-                  <span>Get directions</span>
-                </div>
+                <span className="address">
+                  <span className="business-address">
+                    {business.address}
+                  </span>
+                  <span className="business-city">
+                    {business.city}
+                  </span>
+                  <span className="business-state">
+                    {business.state}
+                  </span>
+                  <span className="business-zip">
+                    {business.zip}
+                  </span>
+                </span>
               </div>
               <div className="reviews">
                 <h3 className="reviews-title">Recommended Reviews</h3>

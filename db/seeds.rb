@@ -42,4 +42,26 @@ b5.photos.attach(io: File.open("/Users/michaellau/Desktop/yakiniq3.jpeg"), filen
 
 b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi1.jpeg"), filename: "ramennagi1.jpeg")
 b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi2.jpeg"), filename: "ramennagi2.jpeg")
-b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi3.jpeg"), filename: "ramennagi3.jpeg") 
+b6.photos.attach(io: File.open("/Users/michaellau/Desktop/ramennagi3.jpeg"), filename: "ramennagi3.jpeg")
+
+b7.photos.attach(io: File.open("/Users/michaellau/Desktop/mochi1.jpeg"), filename: "mochi1.jpeg")
+b7.photos.attach(io: File.open("/Users/michaellau/Desktop/mochi2.jpeg"), filename: "mochi2.jpeg")
+b7.photos.attach(io: File.open("/Users/michaellau/Desktop/mochi3.jpeg"), filename: "mochi3.jpeg")
+b7.photos.attach(io: File.open("/Users/michaellau/Desktop/mochi4.jpeg"), filename: "mochi4.jpeg") 
+
+t1 = Tag.create!(tag: "Drinks")
+t2 = Tag.create!(tag: "Dinner")
+t3 = Tag.create!(tag: "Dessert")
+t4 = Tag.create!(tag: "Brunch")
+t5 = Tag.create!(tag: "Sandwiches")
+t6 = Tag.create!(tag: "Boba")
+
+bt1 = BusinessTag.create!(business_id: b1.id, tag_id: t4.id)
+bt2 = BusinessTag.create!(business_id: b1.id, tag_id: t5.id)
+bt3 = BusinessTag.create!(business_id: b2.id, tag_id: t3.id)
+bt4 = BusinessTag.create!(business_id: b3.id, tag_id: t1.id)
+bt5 = BusinessTag.create!(business_id: b3.id, tag_id: t6.id)
+bt6 = BusinessTag.create!(business_id: b4.id, tag_id: t3.id)
+bt7 = BusinessTag.create!(business_id: b5.id, tag_id: t2.id)
+bt8 = BusinessTag.create!(business_id: b6.id, tag_id: t2.id)
+bt9 = BusinessTag.create!(business_id: b7.id, tag_id: t3.id)

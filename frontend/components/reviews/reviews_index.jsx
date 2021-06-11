@@ -6,9 +6,10 @@ class ReviewsIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      hasFetched: false
+      hasFetched: false,
+      dropDown: false
     }
-    console.log(this.props)
+    this.toggleDrop = this.toggleDrop.bind(this);
   }
   
   componentDidMount() {
@@ -28,6 +29,11 @@ class ReviewsIndex extends React.Component {
     }
     return true;
   }
+
+  toggleDrop() {
+    this.setState(prevState => ({dropDown: !prevState.dropDown}))
+  }
+  
 
   render() {
     if (!this.state.hasFetched) return null;
@@ -100,8 +106,14 @@ class ReviewsIndex extends React.Component {
                     {review.author.first_name}
                   </div>
                   <div>
-                    <button className="update-delete-button"><BsThreeDots/></button>
+                    <button className="update-delete-button" onClick={this.toggleDrop}><BsThreeDots/></button>
                   </div>
+                  {this.state.dropDown ? 
+                    <div>
+                      <button>Edit review</button>
+                      <button>Delete review</button>
+                    </div> : 
+                    null}
                 </div>
                 <div className="rating-container">
                   {stars}
