@@ -1,0 +1,96 @@
+// Place all the styles related to the api/Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-nav-container {
+  padding: 28px 0 26px;
+  border-bottom: 1px solid #eeeeef;
+}
+
+.reviews-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  div {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  margin-left: 10px;
+}
+
+.reviews-title {
+  font-size: 20px;
+  font-family: $open-sans;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.review-form-container {
+  margin: 0 auto;
+  width: 607px;
+  padding: 32px;
+  h3 {
+    padding-bottom: 32px;
+    color: rgba(43, 39, 60, 1);
+    font: $poppins900;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.inner-content-container {
+  border: 1px solid #bbbac0;
+  border-radius: 4px;
+  cursor: text;
+  max-width: 630px;
+  padding: 24px;
+}
+
+.review-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: $poppins900;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  width: 200px;
+  height: 40px;
+  background-color: rgba(244,54,57,1);
+  color: rgba(255, 255,255,1);
+}
+
+.review-content {
+  font-family: $open-sans;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  padding: 0;
+  resize: none;
+  width: 100%;
+  min-height: 240px;
+}
+
+.review-user-info {
+  display: flex;
+  justify-content: space-between;
+}

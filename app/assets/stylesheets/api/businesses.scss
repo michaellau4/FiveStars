@@ -17,16 +17,21 @@ $poppins900: 'Poppins', sans-serif;
     font-family: $roboto;
     color: #D32323;
   }
+  h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3125em;
+  }
 }
 
 .hot-business-container {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  padding: 30px;
+  padding: 15px;
   width: 990px;
 }
-
 
 .business-card {
   margin: 15px;
@@ -48,6 +53,9 @@ $poppins900: 'Poppins', sans-serif;
       width: 100%;
       height: 100%;
       // opacity: 0;
+    }
+    h3:first-child {
+      text-decoration: none;
     }
   }
 }
@@ -120,7 +128,7 @@ p {
   display: flex;
   box-sizing: border-box;
   justify-content: center;
-  width: 990px;
+  width: 100%;
   position: relative;
   height: 426px;
   vertical-align: middle;
@@ -141,7 +149,8 @@ p {
   bottom: 0;
   box-sizing: border-box;
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
   position: absolute;
   padding: 40px 64px;
   margin: auto;
@@ -152,6 +161,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 34px;
 }
 
 .mid-section-wrapper {
@@ -164,7 +174,7 @@ p {
   flex-direction: row-reverse;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 990px;
+  width: 60%;
   font-family: $open-sans;
   padding: 40px 64px;
 }
@@ -194,6 +204,7 @@ p {
 
 .mid-section-main-content {
   margin-right: 16px;
+  width: 80%;
 }
 
 .locations-box {
@@ -202,8 +213,8 @@ p {
   padding-bottom: 24px;
   padding-top: 24px;
   padding-right: 24px;
+  margin-bottom: 32px;
 }
-
 
 .website-url {
   border-bottom: 1px solid #eeeeef;
@@ -241,7 +252,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 200px;
   height: 100%;
   border: none;
   border-radius: 4px;
@@ -251,9 +262,56 @@ p {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-
+  cursor: pointer;
 }
 
 .star-button {
   font-size: 22px;
+}
+
+.rating-info-container {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.rating-info {
+  font-family: $open-sans;
+  color: #ffffff;
+  margin-left: 12px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600px;
+}
+
+.search-nav-bar-container {
+  background-color: #fff
+}
+
+.update-delete-button {
+
+}
+
+.tag-container {
+  display: flex;
+}
+
+.business-tags {  
+  font-family: $open-sans;
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.business-city {
+  margin-left: 5px;
+}
+
+.business-state {
+  margin-left: 5px;
+}
+
+.business-zip {
+  margin-left: 5px;
 }

@@ -23,7 +23,7 @@ const Splash = (props) => {
           <li>Chicago</li>
           <li>Palo Alto</li>
           <li>Oakland</li>
-          <li><GoSearch/> More Cities</li>
+          <li><GoSearch/>&nbsp;More Cities</li>
         </ul>
         <h3>Hot & New Businesses</h3>
         <div className="hot-business-container">
@@ -69,7 +69,7 @@ const Splash = (props) => {
 
           </div>
           <footer className="footer-background">
-            <h3>bottom</h3>
+        
           </footer>
         </div>
       </div>

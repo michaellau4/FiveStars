@@ -12,7 +12,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import NotFoundPage from './notfound/not_found';
 import BusinessContainer from './business/business_container';
-
+import ReviewFormContainer from './reviews/review_form_container';
 
 const App = () => (
   <div>
@@ -21,6 +21,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> 
       <Route exact path="/businesses/:businessId" component={BusinessContainer}/>
       <Route exact path="/" component={SplashContainer} />
+      
+      <ProtectedRoute exact path="/businesses/:businessId/createReview" component={ReviewFormContainer}/>
       <Route path="*" component={NotFoundPage}/>
     </Switch> 
   </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
-import { GoSearch } from "react-icons/go";
+import Search from '../search/search';
+import { IoLogoLinkedin } from "react-icons/io5";
+import { AiFillGithub } from "react-icons/ai";
+
 
 
 class Navbar extends React.Component {
@@ -16,9 +19,8 @@ class Navbar extends React.Component {
           <div className="nav-container">
             <div className="nav-header">
               <span>
-                <a>Write a Review</a>
-                <a>Events</a>
-                <a>Talk</a>
+                <a className="nav-linkedin-icon" href="https://www.linkedin.com/in/michaelslau/"><IoLogoLinkedin/></a>
+                <a className="nav-github-icon" href="https://github.com/michaellau4/FiveStars"><AiFillGithub/></a>
               </span>
               <GreetingContainer/>
             </div>
@@ -27,25 +29,7 @@ class Navbar extends React.Component {
             <div className="main-logo">
               <img src="https://i.imgur.com/v4VEQlh.png" alt="" />
             </div>
-            <div className="main-search-bar">
-              <div className="find-input-wrapper">
-                <span>
-                  <p>
-                    Find
-                  </p>
-                </span>
-                <input type="text" />
-              </div>
-              <div className="near-input-wrapper">
-                <span>
-                  <p>
-                    Near
-                  </p>
-                </span>
-                <input type="text" />
-              </div>
-              <button><GoSearch className="search-icon"/></button>
-            </div>
+            <Search/>
           </div>
         </div>
       </div>

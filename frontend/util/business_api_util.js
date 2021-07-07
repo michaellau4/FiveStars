@@ -10,4 +10,11 @@ export const fetchBusinesses = () => (
     method: 'GET',
     url: '/api/businesses'
   })
-)
+);
+
+export const searchBusinesses = search => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/businesses?query=${search}`
+  })
+);

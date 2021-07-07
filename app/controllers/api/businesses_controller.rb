@@ -1,7 +1,12 @@
 class Api::BusinessesController < ApplicationController
 
   def index
-    @businesses = Business.all
+    if params[:query]
+      @businesses = Business.where("business_name LIKE ?", "%#{params[:query]}%")
+    else
+      @businesses = Business.all
+    end
+    render :index
   end
 
   def show

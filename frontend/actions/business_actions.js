@@ -23,3 +23,8 @@ export const fetchBusinesses = () => dispatch => (
     .then((businesses) => dispatch(receiveAllBusinesses(businesses)))
 );
 
+export const searchBusinesses = search => dispatch => (
+  APIUtil.searchBusinesses(search)
+    .then(businesses => dispatch(receiveAllBusinesses(businesses)))
+);
+
