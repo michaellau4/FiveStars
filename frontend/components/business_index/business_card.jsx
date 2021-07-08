@@ -4,9 +4,14 @@ const BusinessCard = (props) => {
   return (
     <div className="business-card-container">
       <div className="business-card">
-        <p>
+        <h3>
           {props.business.business_name}
-        </p>
+        </h3>
+        <div>
+          {props.business.tags.map((tag) => (
+            <div key={tag.id}>{tag.tag}</div>
+          ))}
+        </div>
       </div>    
     </div>
   )
