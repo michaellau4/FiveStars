@@ -146,7 +146,6 @@ class Business extends React.Component {
       }
     }
     let stars = <div style={styleStars}></div>
-    console.log(business)
     return (
       <div className="page-container">
         <SearchNav/>

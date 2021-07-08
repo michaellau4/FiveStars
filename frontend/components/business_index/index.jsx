@@ -14,7 +14,7 @@ class Index extends React.Component {
     return (
       <div>
         {this.props.businesses.map((business, idx) => (
-          <BusinessCard key={idx} business={business}/>
+          <BusinessCard key={idx} business={business} id={idx}/>
         ))}
       </div>
     )
