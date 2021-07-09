@@ -8,14 +8,19 @@ const BusinessCard = (props) => {
   // ));
   // avgRating = avgRating / totalReviews;
   return (
-    <div className="business-card-container">
-      <div className="business-card">
-        <h3>
-          {(props.id + 1)}. {props.business.business_name}
-        </h3>
-        <div>
+    <div className="business-list-container">
+      <div className="business-list">
+        <span className="title-container">
+          <h3>
+            {(props.id + 1)}.&nbsp; 
+          </h3>
+          <h3 className="business-list-name">
+            {props.business.business_name}
+          </h3>
+        </span>
+        <div className="business-list-tag-container">
           {props.business.tags.map((tag) => (
-            <div key={tag.id}>{tag.tag}</div>
+            <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
           ))}
         </div>
       </div>    

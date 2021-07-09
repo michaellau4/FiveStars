@@ -12,10 +12,13 @@ class Index extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.businesses.map((business, idx) => (
-          <BusinessCard key={idx} business={business} id={idx}/>
-        ))}
+      <div className="business-list-page">
+        <div className="business-list-page-container">
+          <h3>All Results</h3>
+          {this.props.businesses.map((business, idx) => (
+            <BusinessCard key={idx} business={business} id={idx}/>
+          ))}
+        </div>
       </div>
     )
   }
