@@ -39,12 +39,12 @@ class BusinessCard extends React.Component {
 
   render() {
     let {business, id} = this.props;
-    // let totalReviews = business.reviews.length;
-    // let avgRating = 0;
-    // business.reviews.map(review => (
-    //   avgRating += review.rating
-    // ));
-    // avgRating = avgRating / totalReviews;
+    let totalReviews = business.reviews.length;
+    let avgRating = 0;
+    business.reviews.map(review => (
+      avgRating += review.rating
+    ));
+    avgRating = avgRating / totalReviews;
     if (!business) {
       return (
         <div>Loading...</div>
@@ -53,11 +53,11 @@ class BusinessCard extends React.Component {
       return (
         <div className="business-list-container">
         <div className="business-list">
-          {/* <div>
+          <div>
             {business.photoUrls.map((photoUrl, i) => (
               <img key={i} src={photoUrl} key={i} alt="" />
             ))}
-          </div> */}
+          </div>
           <span className="title-container">
             <h3>
               {(id + 1)}.&nbsp; 
@@ -66,11 +66,11 @@ class BusinessCard extends React.Component {
               {business.business_name}
             </h3>
           </span>
-          {/* <div>
+          <div>
             <h3>
               {business.reviews.length}
             </h3>
-          </div> */}
+          </div>
           <div className="business-list-tag-container">
             {business.tags.map((tag) => (
               <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
