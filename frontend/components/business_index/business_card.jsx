@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from 'react-bootstrap/Carousel'
 
 // const BusinessCard = (props) => {
 //   let reviews = props.business.reviews();
@@ -54,10 +55,21 @@ class BusinessCard extends React.Component {
         <div className="business-list-container">
         <div className="business-list">
           <div>
-            {business.photoUrls.map((photoUrl, i) => (
-              <img key={i} src={photoUrl} key={i} alt="" />
-            ))}
-          </div>
+            {/* <div id="myCarousel" className="carousel-slide" data-ride="carousel">
+              <div className="carousel-inner">
+                <div className="item-active">
+                  
+                </div>
+
+              </div> */}
+              <div className="">
+                <img src={business.photoUrls[0]} alt="" />
+              </div>
+              {/* {business.photoUrls.map((photoUrl, i) => (
+                  <img className="business-image-carousel" key={i} src={photoUrl} alt="" />
+              )).slice(0,3)} */}
+            </div>
+          
           <span className="title-container">
             <h3>
               {(id + 1)}.&nbsp; 
@@ -76,8 +88,8 @@ class BusinessCard extends React.Component {
               <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
             ))}
           </div>
-        </div>    
-      </div>
+        </div>  
+        </div>  
       )
     }
   }
