@@ -6,7 +6,7 @@
 
 .business-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 24px;
   border: 1px solid #eeeeef;
   border-radius: 4px;
@@ -27,8 +27,14 @@
   font-weight: bold;
 }
 
-.business-list-name {
+.business-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
+.business-info-container > * {
+  margin: 4px 0px;
 }
 
 .business-list-tag-container {
@@ -52,4 +58,16 @@
   cursor: pointer;
   opacity: 1;
   transition: background-color .2s ease;
+}
+
+.image-container {
+  height: 220px;
+  width: 220px;
+  margin-right: 12px;
+}
+
+.business-images {
+  width: 220px;
+  height: 220px;
+  border-radius: 4px;
 }

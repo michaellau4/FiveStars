@@ -54,39 +54,32 @@ class BusinessCard extends React.Component {
       return (
         <div className="business-list-container">
         <div className="business-list">
-          <div>
-            {/* <div id="myCarousel" className="carousel-slide" data-ride="carousel">
-              <div className="carousel-inner">
-                <div className="item-active">
-                  
-                </div>
-
-              </div> */}
-              <div className="">
-                <img src={business.photoUrls[0]} alt="" />
+          <div className="image-container">
+            
+              <div className="image-carousel-container">
+                <img className="business-images" src={business.photoUrls[0]} alt="" />
               </div>
-              {/* {business.photoUrls.map((photoUrl, i) => (
-                  <img className="business-image-carousel" key={i} src={photoUrl} alt="" />
-              )).slice(0,3)} */}
+              
             </div>
-          
-          <span className="title-container">
-            <h3>
-              {(id + 1)}.&nbsp; 
-            </h3>
-            <h3 className="business-list-name">
-              {business.business_name}
-            </h3>
-          </span>
-          <div>
-            <h3>
-              {business.reviews.length}
-            </h3>
-          </div>
-          <div className="business-list-tag-container">
-            {business.tags.map((tag) => (
-              <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
-            ))}
+          <div className="business-info-container">
+            <span className="title-container">
+              <h3>
+                {(id + 1)}.&nbsp; 
+              </h3>
+              <h3 className="business-list-name">
+                {business.business_name}
+              </h3>
+            </span>
+            <div>
+              <h3>
+                {business.reviews.length}
+              </h3>
+            </div>
+            <div className="business-list-tag-container">
+              {business.tags.map((tag) => (
+                <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
+              ))}
+            </div>
           </div>
         </div>  
         </div>  
