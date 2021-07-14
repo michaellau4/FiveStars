@@ -11,7 +11,7 @@ const SearchNav = () => {
           <img className="logo" src="https://i.imgur.com/OFHSsc8.png"/>
         </Link>
       </div>
-      <div className="main-search-bar">
+      <div className="nav-search-bar">
         <div className="find-input-wrapper">
           <span>
     

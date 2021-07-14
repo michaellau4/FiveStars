@@ -124,8 +124,8 @@ class BusinessCard extends React.Component {
       )
     } else {
       return (
-        <div className="business-list-container" onClick={() => this.goToBusinessPage()}>
-          <div className="business-list">
+        <div className="business-list-container">
+          <div className="business-list" onClick={() => this.goToBusinessPage()}>
             <div className="image-container">
               
               <div className="image-carousel-container">
