@@ -1,9 +1,15 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+import {withRouter} from 'react-router-dom';
 
 class BusinessCard extends React.Component {
   constructor(props) {
     super(props);
+    this.goToBusinessPage = this.goToBusinessPage.bind(this);
+  }
+
+  goToBusinessPage() {
+    this.props.history.push(`/businesses/${this.props.business.id}/`);
   }
 
   render() {
@@ -118,44 +124,44 @@ class BusinessCard extends React.Component {
       )
     } else {
       return (
-        <div className="business-list-container">
-        <div className="business-list">
-          <div className="image-container">
-            
-            <div className="image-carousel-container">
-              <img className="business-images" src={business.photoUrls[0]} alt="" />
-            </div>
+        <div className="business-list-container" onClick={() => this.goToBusinessPage()}>
+          <div className="business-list">
+            <div className="image-container">
               
-          </div>
-          <div className="business-info-container">
-            <span className="title-container">
-              <h3>
-                {(id + 1)}.&nbsp; 
-              </h3>
-              <h3 className="business-list-name">
-                {business.business_name}
-              </h3>
-            </span>
-            <div>
-              <span className="business-card-rating">
-                <p className="business-card-stars">{stars}</p>
-                <p className="business-card-reviews">{business.reviews.length}</p>
+              <div className="image-carousel-container">
+                <img className="business-images" src={business.photoUrls[0]} alt="" />
+              </div>
+                
+            </div>
+            <div className="business-info-container">
+              <span className="title-container">
+                <h3>
+                  {(id + 1)}.&nbsp; 
+                </h3>
+                <h3 className="business-list-name">
+                  {business.business_name}
+                </h3>
               </span>
+              <div>
+                <span className="business-card-rating">
+                  <p className="business-card-stars">{stars}</p>
+                  <p className="business-card-reviews">{business.reviews.length}</p>
+                </span>
+              </div>
+              <div className="business-list-tag-container">
+                {business.tags.map((tag) => (
+                  <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
+                ))}
+              </div>
+              <div>
+                {/* {(!business.reviews[0]) ? <p>{business.reviews[0].body}</p> : null} */}
+              </div>
             </div>
-            <div className="business-list-tag-container">
-              {business.tags.map((tag) => (
-                <div className="business-list-tags" key={tag.id}>{tag.tag}</div>
-              ))}
-            </div>
-            <div>
-              {/* {(!business.reviews[0]) ? <p>{business.reviews[0].body}</p> : null} */}
-            </div>
-          </div>
-        </div>  
+          </div>  
         </div>  
       )
     }
   }
 }
 
-export default BusinessCard;
+export default withRouter(BusinessCard);
