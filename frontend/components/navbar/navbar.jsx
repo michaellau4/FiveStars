@@ -19,8 +19,8 @@ class Navbar extends React.Component {
           <div className="nav-container">
             <div className="nav-header">
               <span>
-                <a className="nav-linkedin-icon" href="https://www.linkedin.com/in/michaelslau/"><IoLogoLinkedin/></a>
-                <a className="nav-github-icon" href="https://github.com/michaellau4/FiveStars"><AiFillGithub/></a>
+                <a className="nav-linkedin-icon" href="https://www.linkedin.com/in/michaelslau/"><IoLogoLinkedin size={36}/></a>
+                <a className="nav-github-icon" href="https://github.com/michaellau4/FiveStars"><AiFillGithub size={36}/></a>
               </span>
               <GreetingContainer/>
             </div>

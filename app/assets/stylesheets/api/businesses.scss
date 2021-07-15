@@ -315,3 +315,12 @@ p {
 .business-zip {
   margin-left: 5px;
 }
+
+.card-title {
+  text-decoration: none;
+  color: #0073bb;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+}

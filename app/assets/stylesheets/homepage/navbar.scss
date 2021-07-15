@@ -1,30 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;900&display=swap');
 $roboto: 'Roboto', sans-serif;
-
-// .homepage-hero {
-//   display: flex;
-//   height: 600px;
-//   font-family: $roboto;
-// }
-
-// .header-nav {
-//   display: flex;
-//   justify-content: space-around;
-//   width: 100%;
-//   height: 36px;
-// }
-
-// .header-links {
-//   display: flex;
-//   justify-content: space-between;
-//   height: 36px;
-// }
-
-// .header-account-links {
-//   justify-content: flex-end;
-//   height: 36px;
-// }
-
+    
 .nav-container {
   display: flex;
   justify-content: center;
@@ -42,7 +18,7 @@ $roboto: 'Roboto', sans-serif;
   }
   a {
     font-family: $roboto;
-    font-size: 32px;
+    font-size: 14px;
     color: #FFFFFF;
   }
 }
@@ -101,4 +77,14 @@ $roboto: 'Roboto', sans-serif;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
+}
+
+.nav-linkedin-icon:hover {
+  color: #0073bb;
+  transition: 0.3s;
+}
+
+.nav-github-icon:hover {
+  color: #0073bb;
+  transition: 0.3s;
 }

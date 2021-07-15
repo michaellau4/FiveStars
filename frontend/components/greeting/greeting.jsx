@@ -15,7 +15,7 @@ class Greeting extends React.Component {
   sessionLinks() {
     return (
     <nav className="login-signup">
-      <Link to="/login">Log In</Link>
+      <Link to="/login" className="log-in">Log In</Link>
       &nbsp; &nbsp;
       <button className="signup-button" onClick={()=>this.props.history.push("/signup")}> 
       Sign Up</button>
