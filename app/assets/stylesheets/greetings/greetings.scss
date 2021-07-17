@@ -102,8 +102,22 @@ h3 {
 .log-in {
   text-decoration: none;
   font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
+  padding: 9px 12px 10px;
 }
 
 .log-in:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid #fff;
+}
+
+.signup-button {
+  font-weight: 700;
+  color: #fff;
+  font-size: 14px;
+}
+
+.signup-button:hover {
+  color: #757280;
 }

@@ -1,18 +1,25 @@
 import React from 'react';
 import BusinessCard from './business_card';
 import SearchNav from '../search_nav_bar/search_nav_bar';
+import queryString from 'query-string';
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      searchQuery: this.props.location.search.split("=")[1]
     }
   }
 
   componentDidMount() {
-    this.props.fetchBusinesses()
-      .then(() => {this.setState({loading: false})})
+    if (this.state.searchQuery) {
+      this.props.searchBusinesses(this.state.searchQuery)
+        .then(() => {this.setState({loading: false})});
+    } else {
+      this.props.fetchBusinesses()
+        .then(() => {this.setState({loading: false})})
+    }
   }
 
   render() {
