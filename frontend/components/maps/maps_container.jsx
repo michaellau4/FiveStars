@@ -6,6 +6,7 @@ const googleMapsAPI = require("../../config/keys").googleMapsAPI;
 class GoogleMapsContainer extends React.Component {
   constructor() {
     super()
+    Geocode.setApiKey(googleMapsAPI);
   }
 
   render() {

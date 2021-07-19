@@ -1,3 +1,3 @@
 module.exports = {
-  googleMapsAPI: "AIzaSyABifjEDhNxnMGwrRxXO6OYbJHr2MAsprs",
+  googleMapsAPI: "AIzaSyC4AEAScUgoPFQNPUpOyedPSuYW-GvRUvc",
 };
