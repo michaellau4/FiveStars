@@ -30,3 +30,5 @@ bundle.js.map
 
 # Ignore application configuration
 /config/application.yml
+
+/frontend/src/config/keys_dev.js

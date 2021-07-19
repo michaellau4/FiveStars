@@ -2,6 +2,8 @@ import React from 'react';
 import BusinessCard from './business_card';
 import SearchNav from '../search_nav_bar/search_nav_bar';
 import queryString from 'query-string';
+import BusinessMap from '../maps/maps';
+import GoogleMapsContainer from '../maps/maps_container';
 
 class Index extends React.Component {
   constructor(props) {
@@ -25,18 +27,25 @@ class Index extends React.Component {
   render() {
     if (this.state.loading) return null;
     return (
-      <div className="business-list-page">
+      <div className="business-index-container">
         <SearchNav/>
-        <div className="business-list-page-container">
-          <h3>All Results</h3>
-          {this.props.businesses.map((business, idx) => {
-            return (
-              <div>
-                <BusinessCard key={idx} business={business} id={idx}/>
-              </div>
-            )
-          }
-          )}
+        <div className="business-index">
+          <div className="business-list-page">
+            <div className="business-list-page-container">
+              <h3>All Results</h3>
+              {this.props.businesses.map((business, idx) => {
+                return (
+                  <div>
+                    <BusinessCard key={idx} business={business} id={idx}/>
+                  </div>
+                )
+              }
+              )}
+            </div>
+          </div>
+          <div className="maps-container">
+            <GoogleMapsContainer />
+          </div>
         </div>
       </div>
     )

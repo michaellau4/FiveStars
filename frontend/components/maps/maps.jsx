@@ -1,7 +1,6 @@
 import React from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
-class Map extends React.Component {
+class BusinessMap extends React.Component {
 
   componentDidMount() {
     this.loadMap();
@@ -35,11 +34,13 @@ class Map extends React.Component {
 
   render() {
     return (
-      <div ref="map">
-        Loading map..
-      </div>
+      <>
+        <div ref="map">
+          Loading map..
+        </div>
+      </>
     )
   }
 }
 
-export default Map;
+export default BusinessMap;

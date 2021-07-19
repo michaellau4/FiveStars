@@ -4,13 +4,17 @@
   margin: 10px;
 }
 
+.business-list-page {
+  width: 50%;
+}
+
 .business-list {
   display: flex;
   flex-direction: row;
   margin: 24px;
   border: 1px solid #eeeeef;
   border-radius: 4px;
-  width: 40%;
+  width: 60%;
   padding: 24px;
 }
 
@@ -91,4 +95,15 @@
   color: rgba(117,114,128,1);
   font-size: 14px;
   font-weight: normal;
+}
+
+.maps-container {
+  width: 500px;
+  height: 800px;
+  // position: absolute;
+  z-index: 3;
+}
+
+.business-index {
+  display: flex;
 }

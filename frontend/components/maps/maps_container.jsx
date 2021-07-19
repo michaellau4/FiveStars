@@ -1,11 +1,11 @@
 import React from 'react';
-import {GoogleApiWrapper} from 'google-maps-react';
-import Map from './maps';
-
+import {GoogleApiWrapper, Map} from 'google-maps-react';
+import Geocode from "react-geocode";
+const googleMapsAPI = require("../../config/keys").googleMapsAPI;
 
 class GoogleMapsContainer extends React.Component {
   constructor() {
-
+    super()
   }
 
   render() {
@@ -13,17 +13,20 @@ class GoogleMapsContainer extends React.Component {
       return <div>Loading...</div>
     }
     const style = {
-      width: '100vw',
-      height: '100vh'
+      width: '100%',
+      height: '100%'
     }
     return (
       <div style={style}>
-        <Map google={this.props.google}/>
+        <Map
+          google={this.props.google}
+          initialCenter={{lat: 37.3382, lng: -121.8863}}
+        />
       </div>
     )
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: __GAPIKEY__
+  apiKey: googleMapsAPI
 })(GoogleMapsContainer)
