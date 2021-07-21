@@ -14,7 +14,9 @@ class GoogleMapsContainer extends React.Component {
       selected: {
         info: {
           id: "",
-          businessName: ""
+          businessName: "",
+          photo: "",
+          tags: ""
         }
       }
     }
@@ -28,7 +30,10 @@ class GoogleMapsContainer extends React.Component {
       Geocode.fromAddress(address).then((response) => {
         const {lat, lng} = response.results[0].geometry.location;
         let markerInfo = {
+          id: business.id,
           name: business.business_name,
+          photo: business.photoUrls[0],
+          tags: business.tags,
           coords: {lat, lng}
         }
         let oldMarkers = this.state.markers;
@@ -84,9 +89,17 @@ class GoogleMapsContainer extends React.Component {
             marker={this.state.activeMarker}
             visible={this.state.showInfo}
             onClose={this.onClose}>
-            <h3>
-              {this.state.selected.info.name}
-            </h3>
+            <div className="info-window">
+              <img className="info-window-photo" src={this.state.selected.info.photo} alt="" />
+              <a href={`/#/businesses/${this.state.selected.info.id}`} className="info-window-title">
+                {this.state.selected.info.name}
+              </a>
+            </div>
+            {/* <h3>
+              {this.state.selected.info.tags.map((tag, idx) => (
+                <div key={idx}>{tag.tag}</div>
+              ))}
+            </h3> */}
           </InfoWindow>
         </Map>
       </div>

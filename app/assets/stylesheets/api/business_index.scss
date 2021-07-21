@@ -107,3 +107,30 @@
 .business-index {
   display: flex;
 }
+
+.info-window-photo {
+  width: 200px;
+  height: 150px;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+.info-window-title {
+  font-size: 16px;
+  color: #2B273C;
+  font-weight: bold;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.info-window-title:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.info-window {
+  display: flex;
+  flex-direction: column;
+}
