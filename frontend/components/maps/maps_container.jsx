@@ -1,12 +1,62 @@
 import React from 'react';
-import {GoogleApiWrapper, Map} from 'google-maps-react';
+import {GoogleApiWrapper, Map, Marker, InfoWindow} from 'google-maps-react';
 import Geocode from "react-geocode";
 const googleMapsAPI = require("../../config/keys").googleMapsAPI;
+Geocode.setApiKey(googleMapsAPI);
 
 class GoogleMapsContainer extends React.Component {
-  constructor() {
-    super()
-    Geocode.setApiKey(googleMapsAPI);
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeMarker: {},
+      markers: [],
+      showInfo: false,
+      selected: {
+        info: {
+          id: "",
+          businessName: ""
+        }
+      }
+    }
+    this.openInfoWindow = this.openInfoWindow.bind(this);
+    this.closeInfo = this.closeInfo.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.businesses.map(business => {
+      let address = business.address + "%" + business.city + "%" + business.state;
+      Geocode.fromAddress(address).then((response) => {
+        const {lat, lng} = response.results[0].geometry.location;
+        let markerInfo = {
+          name: business.business_name,
+          coords: {lat, lng}
+        }
+        let oldMarkers = this.state.markers;
+        oldMarkers = oldMarkers.concat(markerInfo);
+        this.setState({markers: oldMarkers});
+      },
+      (error) => {
+        console.error(error);
+      })
+    })
+  }
+
+  openInfoWindow(props, marker) {
+    console.log(props)
+    this.setState({
+      selected: props,
+      activeMarker: marker,
+      showInfo: true
+    })
+  }
+
+  closeInfo(props) {
+    if (this.state.showInfo) {
+      this.setState({
+        showInfo: false,
+        activeMarker: null
+      })
+    }
   }
 
   render() {
@@ -21,8 +71,24 @@ class GoogleMapsContainer extends React.Component {
       <div style={style}>
         <Map
           google={this.props.google}
-          initialCenter={{lat: 37.3382, lng: -121.8863}}
-        />
+          initialCenter={{lat: 37.3382, lng: -121.8863}}>
+          {this.state.markers.map((markerInfo, idx) => (
+            <Marker
+              position={markerInfo.coords}
+              key={idx}
+              info={markerInfo}
+              onClick={this.openInfoWindow}
+            />
+          ))}
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showInfo}
+            onClose={this.onClose}>
+            <h3>
+              {this.state.selected.info.name}
+            </h3>
+          </InfoWindow>
+        </Map>
       </div>
     )
   }

@@ -44,7 +44,7 @@ class Index extends React.Component {
             </div>
           </div>
           <div className="maps-container">
-            <GoogleMapsContainer />
+            <GoogleMapsContainer businesses={this.props.businesses}/>
           </div>
         </div>
       </div>
