@@ -4,8 +4,6 @@ import { withRouter } from 'react-router';
 import {searchBusinesses} from '../../actions/business_actions';
 import { GoSearch } from "react-icons/go";
 
-
-
 class Search extends React.Component {
   constructor(props) {
     super(props)

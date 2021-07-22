@@ -69,8 +69,8 @@ class GoogleMapsContainer extends React.Component {
       return <div>Loading...</div>
     }
     const style = {
-      width: '100%',
-      height: '100%'
+      width: '100vh',
+      height: '100vw'
     }
     return (
       <div style={style}>

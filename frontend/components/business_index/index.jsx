@@ -2,7 +2,6 @@ import React from 'react';
 import BusinessCard from './business_card';
 import SearchNav from '../search_nav_bar/search_nav_bar';
 import queryString from 'query-string';
-import BusinessMap from '../maps/maps';
 import GoogleMapsContainer from '../maps/maps_container';
 
 class Index extends React.Component {

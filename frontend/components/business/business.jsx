@@ -7,6 +7,7 @@ import { BiMessageDots } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
 import ReviewIndexContainer from '../reviews/reviews_index_container';
 import {withRouter} from 'react-router-dom';
+import StaticBusinessMap from '../maps/maps_static';
 
 class Business extends React.Component {
   constructor(props) {
@@ -221,6 +222,7 @@ class Business extends React.Component {
                 <button className="review-button" onClick={() => this.goToReview()}><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
               </div>
               <div className="locations-box">
+                <StaticBusinessMap business={business}/>
                 <h3>Location & Hours</h3>
                 <span className="address">
                   <span className="business-address">
