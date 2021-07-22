@@ -142,6 +142,11 @@ class BusinessCard extends React.Component {
                   {business.business_name}
                 </h3>
               </span>
+              <div className="business-info">
+                <h3>{business.phone_number}</h3>
+                <h3>{business.address}</h3>
+                <h3>{business.city}</h3>
+              </div>
               <div>
                 <span className="business-card-rating">
                   <p className="business-card-stars">{stars}</p>

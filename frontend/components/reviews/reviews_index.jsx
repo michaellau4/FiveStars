@@ -102,7 +102,7 @@ class ReviewsIndex extends React.Component {
             return (
               <div className="reviews-container">
                 <div className="review-user-info">
-                  <div>
+                  <div className="review-owner">
                     {review.author.first_name}
                   </div>
                   <div>
