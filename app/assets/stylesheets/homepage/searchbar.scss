@@ -92,4 +92,76 @@
 
 .search-nav-bar-container {
   border-bottom: 1px solid #eeeeef;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.navbar-log-in {
+  font-family: $open-sans;
+  font-size: 16px;
+  border: 1px solid rgba(187, 186, 192, 1);
+  color: rgba(43, 39, 60, 1);
+  padding: 8px 16px;
+  display: inline-flex;
+  justify-content: center;
+  height: 40px;
+  width: auto;
+  box-sizing: border-box;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 4px;
+  line-height: 22px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.navbar-log-in:hover {
+  cursor: pointer;
+  transition: all 0.8s;
+  background-color: rgba(0,0,0,0.12);
+  box-shadow: none;
+}
+
+.navbar-signup-button {
+  background-color: #F43939;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 9px 0px 7px 12px;
+  font-family: $open-sans;
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: auto;
+  line-height: 22px;
+  border-radius: 4px;
+  border: none;
+}
+
+.navbar-signup-button:hover {
+  cursor: pointer;
+}
+
+.navbar-login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar-linkedin-icon {
+  margin-right: 12px;
+  color: #757280;
+}
+
+.navbar-github-icon {
+  margin-right: 12px;
+  color: #757280;
+}
+
+.navbar-header-group {
+  display: flex;
+  align-items: center;
 }

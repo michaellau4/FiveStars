@@ -27,7 +27,7 @@ class StaticBusinessMap extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="static-map">
         <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.coords.lat},${this.state.coords.lng}&zoom=13&size=400x200&maptype=roadmap
           &markers=color:red%7Clabel:C%7C${this.state.coords.lat},${this.state.coords.lng}
           &key=${googleMapsAPI}`} alt="" />

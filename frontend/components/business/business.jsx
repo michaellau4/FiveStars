@@ -199,7 +199,7 @@ class Business extends React.Component {
                         {business.address}
                       </span>
                       <span className="business-city">
-                        {business.city}
+                        {business.city},
                       </span>
                       <span className="business-state">
                         {business.state}
@@ -222,14 +222,14 @@ class Business extends React.Component {
                 <button className="review-button" onClick={() => this.goToReview()}><AiOutlineStar className="star-button"/>&nbsp;Write a Review</button>
               </div>
               <div className="locations-box">
+                <h3 className="locations-info">Location & Info</h3>
                 <StaticBusinessMap business={business}/>
-                <h3>Location & Hours</h3>
                 <span className="address">
                   <span className="business-address">
                     {business.address}
                   </span>
                   <span className="business-city">
-                    {business.city}
+                    {business.city},
                   </span>
                   <span className="business-state">
                     {business.state}

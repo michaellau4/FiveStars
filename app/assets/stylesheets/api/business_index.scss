@@ -5,7 +5,7 @@
 }
 
 .business-list-page {
-  width: 50%;
+  width: 60%;
 }
 
 .business-list {
@@ -98,14 +98,17 @@
 }
 
 .maps-container {
-  width: 500px;
-  height: 800px;
-  // position: absolute;
+  width: 45%;
+  height: 90%;
   z-index: 3;
+  position: fixed;
+  right: 0;
 }
 
 .business-index {
   display: flex;
+  margin-left: 150px;
+  // justify-content: flex-start;
 }
 
 .info-window-photo {

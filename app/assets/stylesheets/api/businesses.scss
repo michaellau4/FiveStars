@@ -324,3 +324,34 @@ p {
 .card-title:hover {
   text-decoration: underline;
 }
+
+.locations-info {
+  font-size: 20px;
+  font-family: $open-sans;
+  font-weight: 600;
+  color: #2B273C;
+  line-height: 26px;
+  display: inline;
+  margin-bottom: 8px;
+}
+
+.static-map {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.business-address {
+  font-size: 14px;
+  color: #00838F;
+  font-family: $open-sans;
+  font-weight: 600;
+}
+
+.business-city, .business-state, .business-zip {
+  font-size: 14px;
+  font-family: $open-sans;
+  font-weight: 600;
+  color: #2B273C;
+}
+
+
