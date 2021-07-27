@@ -83,8 +83,13 @@ class ReviewForm extends React.Component {
                     <input name="rating" type="radio" checked={this.state.rating === 5} onChange={this.handleRating} value="5"/>
                   </label>
                 </div>
-                <div>
-                  <input className="review-content" type="text-area" onChange={this.handleBody} value={this.state.body} placeholder="Placeholder for now"/>
+                <div className="review-content-container">
+                  <input
+                    className="review-content"
+                    type="text-area"
+                    onChange={this.handleBody}
+                    value={this.state.body}
+                    placeholder="Lorem ipsum blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"/>
                 </div>
               </div>
               <button className="review-submit">

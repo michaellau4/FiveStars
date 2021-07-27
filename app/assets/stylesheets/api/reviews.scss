@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 $open-sans-bold: 'Open Sans', sans-serif;
 
-.review-nav-container {
-  padding: 28px 0 26px;
-  border-bottom: 1px solid #eeeeef;
-}
+// .review-nav-container {
+//   // padding: 28px 0 26px;
+//   // border-bottom: 1px solid #eeeeef;
+// }
 
 .reviews-wrapper {
   margin-top: 30px;
@@ -90,6 +90,18 @@ $open-sans-bold: 'Open Sans', sans-serif;
   resize: none;
   width: 100%;
   min-height: 240px;
+}
+
+::placeholder {
+  overflow-wrap: break-word;
+  display: flex;
+  align-items: flex-start;
+}
+
+.review-content-container{
+  display: flex;
+  justify-content: flex-start;
+  overflow-wrap: break-word;
 }
 
 .review-owner {
