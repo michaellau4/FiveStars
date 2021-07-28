@@ -2,7 +2,7 @@ class Api::BusinessesController < ApplicationController
 
   def index
     if params[:query]
-      @businesses = Business.where("business_name LIKE ?", "%#{params[:query]}%")
+      @businesses = Business.where("lower(business_name) LIKE ?", "%#{params[:query].downcase}%")
     else
       @businesses = Business.all
     end

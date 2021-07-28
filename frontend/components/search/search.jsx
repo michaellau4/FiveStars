@@ -39,10 +39,9 @@ class Search extends React.Component {
           <div className="near-input-wrapper">
             <span>
               <p>
-                Near
+                San Jose Only For Now
               </p>
             </span>
-            <input type="text" placeholder="City" />
           </div>
           <button><GoSearch className="search-icon"/></button>
         </div>
