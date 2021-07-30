@@ -4,6 +4,7 @@ import { HiCog } from "react-icons/hi";
 import { IoPerson, IoPeopleSharp } from "react-icons/io5";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { AiFillGithub } from "react-icons/ai";
+import { SiAngellist } from "react-icons/si";
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Greeting extends React.Component {
           <span>
             <a className="navbar-linkedin-icon" href="https://www.linkedin.com/in/michaelslau/"><IoLogoLinkedin size={36}/></a>
             <a className="navbar-github-icon" href="https://github.com/michaellau4/FiveStars"><AiFillGithub size={36}/></a>
+            <a className="navbar-angel-icon" href="https://angel.co/u/michael-lau-30"><SiAngellist size={36}/></a>
           </span>
           <Link to="/login" className="navbar-log-in">Log In</Link>
           &nbsp; &nbsp;

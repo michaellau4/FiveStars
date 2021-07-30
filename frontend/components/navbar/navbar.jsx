@@ -4,8 +4,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import Search from '../search/search';
 import { IoLogoLinkedin } from "react-icons/io5";
 import { AiFillGithub } from "react-icons/ai";
-
-
+import { SiAngellist } from "react-icons/si";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -21,6 +20,7 @@ class Navbar extends React.Component {
               <span>
                 <a className="nav-linkedin-icon" href="https://www.linkedin.com/in/michaelslau/"><IoLogoLinkedin size={36}/></a>
                 <a className="nav-github-icon" href="https://github.com/michaellau4/FiveStars"><AiFillGithub size={36}/></a>
+                <a className="nav-angel-icon" href="https://angel.co/u/michael-lau-30"><SiAngellist size={36}/></a>
               </span>
               <GreetingContainer/>
             </div>
