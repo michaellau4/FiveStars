@@ -1,5 +1,9 @@
 if (process.env.NODE_ENV === "production") {
-  module.exports = require("./keys_prod");
+  config = {
+    API_URL: process.env.REACT_APP_BASE_URL,
+  };
 } else {
-  module.exports = require("./keys_dev");
+  config = {
+    API_URL: "http://localhost:3000",
+  };
 }
