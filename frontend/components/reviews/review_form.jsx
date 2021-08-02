@@ -8,7 +8,7 @@ class ReviewForm extends React.Component {
     console.log(this.props)
     this.state = {
       body: '',
-      rating: 1,
+      rating: "1",
       author_id: this.props.user_id,
       business_id: this.props.business.id,
     }
@@ -55,6 +55,7 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.rating);
     if (!this.props.business) return null;
     return (
       <>
@@ -68,19 +69,19 @@ class ReviewForm extends React.Component {
               <div className="inner-content-container">
                 <div>
                   <label>Not Good
-                    <input name="rating" type="radio" checked={this.state.rating === 1} onChange={this.handleRating} value="1"/>
+                    <input className="radio-rating" name="rating" type="radio" value="1" onChange={this.handleRating} checked={this.state.rating === "1"}/>
                   </label>
                   <label>Could've been better
-                    <input name="rating" type="radio" checked={this.state.rating === 2} onChange={this.handleRating} value="2" />
+                    <input className="radio-rating" name="rating" type="radio" value="2" onChange={this.handleRating} checked={this.state.rating === "2"}/>
                   </label>
                   <label>OK
-                    <input name="rating" type="radio" checked={this.state.rating === 3} onChange={this.handleRating} value="3"/>
+                    <input className="radio-rating" name="rating" type="radio" value="3" onChange={this.handleRating} checked={this.state.rating === "3"}/>
                   </label>
                   <label>Good
-                    <input name="rating" type="radio" checked={this.state.rating === 4} onChange={this.handleRating} value="4"/>
+                    <input className="radio-rating" name="rating" type="radio" value="4" onChange={this.handleRating} checked={this.state.rating === "4"}/>
                   </label>
                   <label>Great
-                    <input name="rating" type="radio" checked={this.state.rating === 5} onChange={this.handleRating} value="5"/>
+                    <input className="radio-rating" name="rating" type="radio" value="5" onChange={this.handleRating} checked={this.state.rating === "5"}/>
                   </label>
                 </div>
                 <div className="review-content-container">
@@ -91,7 +92,7 @@ class ReviewForm extends React.Component {
                     value={this.state.body}
                     placeholder="Lorem ipsum blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"/>
                 </div>
-              </div>
+              </div>  
               <button className="review-submit">
                 Post Review
               </button>
