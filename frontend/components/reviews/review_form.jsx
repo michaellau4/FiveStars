@@ -5,7 +5,6 @@ import {withRouter} from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
     this.state = {
       body: '',
       rating: "1",
@@ -55,7 +54,6 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.rating);
     if (!this.props.business) return null;
     return (
       <>
@@ -85,9 +83,10 @@ class ReviewForm extends React.Component {
                   </label>
                 </div>
                 <div className="review-content-container">
-                  <input
+                  <textarea
                     className="review-content"
-                    type="text-area"
+                    rows="5"
+                    cols="80"
                     onChange={this.handleBody}
                     value={this.state.body}
                     placeholder="Lorem ipsum blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"/>
