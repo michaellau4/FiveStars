@@ -19,7 +19,8 @@
   display: flex;
   background: white;
   justify-content: space-between;
-  width: 58%;
+  width: 50%;
+  max-width: 900px;
   height: 45px;
   align-items: center;
   border-radius: 4px;
@@ -43,7 +44,7 @@
 .find-input-wrapper {
   display: flex;
   align-items: center;
-  width: 480px;
+  width: 50%;
   height: 90%;
   span {
     margin-left: 5px;
@@ -56,7 +57,7 @@
 
 .near-input-wrapper {
   display: flex;
-  width: 440px;
+  width: 50%;
   height: 90%;
   input {
     width: 100%;
@@ -170,4 +171,10 @@
 .navbar-header-group {
   display: flex;
   align-items: center;
+}
+
+.search {
+  width: 100%;
+  padding-left: 6px;
+  background-color: #FFFFFF;
 }

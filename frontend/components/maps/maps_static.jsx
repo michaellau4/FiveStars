@@ -1,7 +1,6 @@
 import React from 'react';
 import Geocode from "react-geocode";
-const googleMapsAPI = require("../../config/keys").googleMapsAPI;
-Geocode.setApiKey(googleMapsAPI);
+Geocode.setApiKey(`"${window.googleAPIKey}"`);
 
 class StaticBusinessMap extends React.Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class StaticBusinessMap extends React.Component {
       <div className="static-map">
         <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.coords.lat},${this.state.coords.lng}&zoom=13&size=400x200&maptype=roadmap
           &markers=color:red%7Clabel:C%7C${this.state.coords.lat},${this.state.coords.lng}
-          &key=${googleMapsAPI}`} alt="" />
+          &key=${window.googleAPIKey}`} alt="" />
       </div>
     )
   }

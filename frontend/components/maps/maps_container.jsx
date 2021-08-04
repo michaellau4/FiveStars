@@ -1,8 +1,7 @@
 import React from 'react';
 import {GoogleApiWrapper, Map, Marker, InfoWindow} from 'google-maps-react';
 import Geocode from "react-geocode";
-const googleMapsAPI = require("../../config/keys").googleMapsAPI;
-Geocode.setApiKey(googleMapsAPI);
+Geocode.setApiKey(`"${window.googleAPIKey}"`);
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -108,5 +107,5 @@ class GoogleMapsContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: googleMapsAPI
+  apiKey: (`"${window.googleAPIKey}"`) 
 })(GoogleMapsContainer)

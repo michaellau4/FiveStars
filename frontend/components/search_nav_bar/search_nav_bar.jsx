@@ -16,13 +16,13 @@ const SearchNav = () => {
           <span>
     
           </span>
-          <input type="text" />
+          <input className="search" type="text" placeholder="Search Food"/>
         </div>
         <div className="near-input-wrapper">
           <span>
           
           </span>
-          <input type="text" />
+          <input className="search" type="text" placeholder="San Jose Only" disabled/>
         </div>
         <button><GoSearch className="search-icon"/></button>
       </div>
