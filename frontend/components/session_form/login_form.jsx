@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Footer from '../footer/footer';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -99,16 +100,7 @@ class LoginForm extends React.Component {
             </div>
           </div>
         </div>
-        <div className="main-footer-container">
-          <div className="main-footer">
-            <div className="footer-content-container">
-
-            </div>
-            <footer className="footer-background">
-
-            </footer>
-          </div>
-        </div>
+        <Footer/>
       </div>
     );
   }

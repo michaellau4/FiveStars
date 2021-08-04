@@ -8,6 +8,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import ReviewIndexContainer from '../reviews/reviews_index_container';
 import {withRouter} from 'react-router-dom';
 import StaticBusinessMap from '../maps/maps_static';
+import Footer from '../footer/footer';
 
 class Business extends React.Component {
   constructor(props) {
@@ -246,16 +247,7 @@ class Business extends React.Component {
             </div>
           </div>
         </div>
-        <div className="main-footer-container">
-          <div className="main-footer">
-            <div className="footer-content-container">
-
-            </div>
-            <footer className="footer-background">
-              
-            </footer>
-          </div>
-        </div>
+        <Footer/>
       </div>
     )
   }

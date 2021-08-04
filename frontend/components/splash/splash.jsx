@@ -4,7 +4,7 @@ import { GoSearch } from "react-icons/go";
 import {Link} from 'react-router-dom';
 import BusinessContainer from '../business/business_container';
 import { GoFlame } from "react-icons/go";
-
+import Footer from '../footer/footer';
 
 
 const Splash = (props) => {
@@ -63,16 +63,7 @@ const Splash = (props) => {
         </div>
       </div>
 
-      <div className="main-footer-container">
-        <div className="main-footer">
-          <div className="footer-content-container">
-
-          </div>
-          <footer className="footer-background">
-        
-          </footer>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 };

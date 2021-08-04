@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+$open-sans: 'Open Sans', sans-serif;
+
+.footer-content {
+  color: #2b273c;
+  font-family: $open-sans;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main-footer {
+  margin-top: 50px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  a {
+    margin-top: 8px;
+    color: #757280;
+    font-size: 14px;
+    font-family: $open-sans;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import BusinessCard from './business_card';
 import SearchNav from '../search_nav_bar/search_nav_bar';
-import queryString from 'query-string';
 import GoogleMapsContainer from '../maps/maps_container';
+import Footer from '../footer/footer';
 
 class Index extends React.Component {
   constructor(props) {
@@ -40,6 +40,7 @@ class Index extends React.Component {
                 )
               }
               )}
+              <Footer/>
             </div>
           </div>
           <div className="maps-container">
