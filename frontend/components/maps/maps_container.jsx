@@ -1,7 +1,6 @@
 import React from 'react';
 import {GoogleApiWrapper, Map, Marker, InfoWindow} from 'google-maps-react';
 import Geocode from "react-geocode";
-Geocode.setApiKey(`"${window.googleAPIKey}"`);
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -24,6 +23,7 @@ class GoogleMapsContainer extends React.Component {
   }
 
   componentDidMount() {
+    Geocode.setApiKey(window.googleAPIKey);
     this.props.businesses.map(business => {
       let address = business.address + "%" + business.city + "%" + business.state;
       Geocode.fromAddress(address).then((response) => {
@@ -105,7 +105,11 @@ class GoogleMapsContainer extends React.Component {
     )
   }
 }
+// debugger
+// export default GoogleApiWrapper({
+//   apiKey: (window.googleAPIKey) 
+// })(GoogleMapsContainer)
 
-export default GoogleApiWrapper({
-  apiKey: (`"${window.googleAPIKey}"`) 
+export default GoogleApiWrapper((props) => {
+  return {apiKey: window.googleAPIKey}
 })(GoogleMapsContainer)

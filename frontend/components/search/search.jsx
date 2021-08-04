@@ -20,7 +20,6 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.query)
     this.props.searchBusinesses(this.state.query).then(() => this.props.history.push(`/businesses?query=${this.state.query}`))
   }
 

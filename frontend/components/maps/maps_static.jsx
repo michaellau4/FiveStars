@@ -1,6 +1,5 @@
 import React from 'react';
 import Geocode from "react-geocode";
-Geocode.setApiKey(`"${window.googleAPIKey}"`);
 
 class StaticBusinessMap extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class StaticBusinessMap extends React.Component {
   }
 
   componentDidMount() {
+    Geocode.setApiKey(window.googleAPIKey);
     let geocode = this.state.address + " " + this.state.city + " " + this.state.state;
     Geocode.fromAddress(geocode).then(response => {
       const {lat, lng} = response.results[0].geometry.location;
