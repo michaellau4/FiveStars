@@ -2,6 +2,7 @@ import React from 'react';
 import Greeting from '../greeting/greeting_container';
 import { GoSearch } from "react-icons/go";
 import {Link} from 'react-router-dom';
+import Search from '../search/search';
 
 const SearchNav = () => {
   return (
@@ -11,7 +12,7 @@ const SearchNav = () => {
           <img className="logo" src="https://i.imgur.com/OFHSsc8.png"/>
         </Link>
       </div>
-      <div className="nav-search-bar">
+      {/* <div className="nav-search-bar">
         <div className="find-input-wrapper">
           <span>
     
@@ -25,7 +26,8 @@ const SearchNav = () => {
           <input className="search" type="text" placeholder="San Jose Only" disabled/>
         </div>
         <button><GoSearch className="search-icon"/></button>
-      </div>
+      </div> */}
+      <Search />
       <Greeting/>
     </div>
   )

@@ -3,7 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { fetchBusinesses } from '../../actions/business_actions';
 import Splash from './splash';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state = {}) => ({
   currentUser: state.entities.users[state.session.id],
   businesses: Object.values(state.entities.businesses)
 });
