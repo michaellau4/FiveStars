@@ -33,7 +33,6 @@ class ReviewsIndex extends React.Component {
   toggleDrop() {
     this.setState(prevState => ({dropDown: !prevState.dropDown}))
   }
-  
 
   render() {
     if (!this.state.hasFetched) return null;
