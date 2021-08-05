@@ -22,7 +22,7 @@ class Splash extends React.Component {
 
   render() {
     console.log(this.props);
-    if (!this.props.businesses) return <div>Loading...</div>;
+    if (!this.state.loaded) return <div>Loading...</div>;
     return (
       <div>
         <Navbar/>
@@ -41,8 +41,8 @@ class Splash extends React.Component {
             <li><GoSearch/>&nbsp;More Cities</li>
           </ul>
           <h3>Hot & New Businesses</h3>
-          {/* <HotCards businesses={this.props.businesses}/> */}
-          <div className="hot-business-container">
+          <HotCards businesses={this.props.businesses}/>
+          {/* <div className="hot-business-container">
             <div className="business-card">
               <div>
                 <img src="https://s3-media0.fl.yelpcdn.com/bphoto/orBoJAlG4f4cC1tiFL-ByA/ls.jpg" alt="" />
@@ -76,7 +76,7 @@ class Splash extends React.Component {
                 </div>
               </div>
             </div> 
-          </div>
+          </div> */}
         </div> 
 
         <Footer />
