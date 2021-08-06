@@ -3,8 +3,10 @@ import Greeting from '../greeting/greeting_container';
 import { GoSearch } from "react-icons/go";
 import {Link} from 'react-router-dom';
 import Search from '../search/search';
+import { useHistory, withRouter } from 'react-router';
 
 const SearchNav = () => {
+  let history = useHistory();
   return (
     <div className="search-nav-bar-container">
       <div className="logo">
@@ -33,4 +35,4 @@ const SearchNav = () => {
   )
 }
 
-export default SearchNav
+export default withRouter(SearchNav);

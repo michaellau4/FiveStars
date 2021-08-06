@@ -93,8 +93,10 @@
 
 .search-nav-bar-container {
   border-bottom: 1px solid #eeeeef;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 4;
   margin-bottom: -4px;
 }
