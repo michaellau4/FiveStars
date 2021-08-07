@@ -3,12 +3,12 @@ import Greeting from '../greeting/greeting_container';
 import { GoSearch } from "react-icons/go";
 import {Link} from 'react-router-dom';
 import Search from '../search/search';
-import { useHistory, withRouter } from 'react-router';
+import { useLocation } from 'react-router';
 
-const SearchNav = () => {
-  let history = useHistory();
+const SearchNav = (props) => {
+  let location = useLocation();
   return (
-    <div className="search-nav-bar-container">
+    <div className="search-nav-bar-container" style={location.pathname === `/businesses/${props.business.id}/` ? {position: 'unset'} : {position: 'fixed'}}>
       <div className="logo">
         <Link to="/" className="header-link">
           <img className="logo" src="https://i.imgur.com/OFHSsc8.png"/>
@@ -35,4 +35,4 @@ const SearchNav = () => {
   )
 }
 
-export default withRouter(SearchNav);
+export default SearchNav;

@@ -150,7 +150,7 @@ class Business extends React.Component {
     let stars = <div style={styleStars}></div>
     return (
       <div className="page-container">
-        <SearchNav/>
+        <SearchNav business={business}/>
         <div className="business-info-container">
           <div className="business-info-content">
             <div className="business-photo-container">

@@ -105,14 +105,14 @@ class ReviewsIndex extends React.Component {
                     {review.author.first_name}
                   </div>
                   <div>
-                    <button className="update-delete-button" onClick={this.toggleDrop}><BsThreeDots/></button>
+                    {/* <button className="update-delete-button" onClick={this.toggleDrop}><BsThreeDots/></button> */}
                   </div>
-                  {this.state.dropDown ? 
+                  {/* {this.state.dropDown ? 
                     <div>
                       <button>Edit review</button>
                       <button>Delete review</button>
                     </div> : 
-                    null}
+                    null} */}
                 </div>
                 <div className="rating-container">
                   {stars}
