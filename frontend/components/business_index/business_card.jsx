@@ -9,7 +9,7 @@ class BusinessCard extends React.Component {
   }
 
   goToBusinessPage() {
-    this.props.history.push(`/businesses/${this.props.business.id}/`);
+    this.props.history.push(`/businesses/${this.props.business.id}`);
   }
 
   render() {

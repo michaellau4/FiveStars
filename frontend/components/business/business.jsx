@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchNav from '../search_nav_bar/search_nav_bar';
+import SearchBar from '../search_nav_bar/searchbar';
 import { GoLinkExternal } from "react-icons/go";
 import { FiPhoneCall } from "react-icons/fi";
 import { RiDirectionLine } from "react-icons/ri";
@@ -24,6 +24,7 @@ class Business extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     this.props.fetchBusiness(this.props.match.params.businessId)
       .then(() => {this.setState({hasFetched: true})})
   }
@@ -150,7 +151,7 @@ class Business extends React.Component {
     let stars = <div style={styleStars}></div>
     return (
       <div className="page-container">
-        <SearchNav business={business}/>
+        <SearchBar business={business}/>
         <div className="business-info-container">
           <div className="business-info-content">
             <div className="business-photo-container">

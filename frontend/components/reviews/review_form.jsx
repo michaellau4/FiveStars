@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchNav from '../search_nav_bar/search_nav_bar';
+import SearchBar from '../search_nav_bar/searchbar';
 import {withRouter} from 'react-router-dom';
 
 class ReviewForm extends React.Component {
@@ -58,7 +58,7 @@ class ReviewForm extends React.Component {
     return (
       <>
         <div className="review-nav-container">
-          <SearchNav/>
+          <SearchBar business={this.props.business}/>
         </div>
         <div className="review-form-container">
           <h3>{this.props.business.business_name}</h3>
@@ -89,7 +89,7 @@ class ReviewForm extends React.Component {
                     cols="80"
                     onChange={this.handleBody}
                     value={this.state.body}
-                    placeholder="Lorem ipsum blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"/>
+                    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
                 </div>
               </div>  
               <button className="review-submit">

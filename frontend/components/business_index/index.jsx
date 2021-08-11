@@ -14,6 +14,7 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     if (this.state.searchQuery) {
       this.props.searchBusinesses(this.state.searchQuery)
         .then(() => {this.setState({loading: false})});
