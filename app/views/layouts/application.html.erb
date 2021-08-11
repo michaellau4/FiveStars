@@ -10,7 +10,7 @@
       window.googleAPIKey = "<%=Rails.application.credentials.google[:api_key]%>"
     </script>
     <meta property="og:title" content="RideAlong">
-    <meta property="og:image" content="app/assets/images/project_pic.png">
+    <meta property="og:image" content="<%=File.join(Rails.root, "/app/assets/images/project_pic.png")%>">
     <meta 
       property="og:description" 
       content="FiveStars is a website that is a clone of Yelp. FiveStars is built with Ruby on Rails
