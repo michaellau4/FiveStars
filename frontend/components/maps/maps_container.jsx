@@ -46,7 +46,6 @@ class GoogleMapsContainer extends React.Component {
   }
 
   openInfoWindow(props, marker) {
-    console.log(props)
     this.setState({
       selected: props,
       activeMarker: marker,

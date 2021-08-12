@@ -44,7 +44,6 @@ class LoginForm extends React.Component {
 
   guestLogin(e) {
     e.preventDefault();
-    console.log(this.info);
     this.props.processForm(this.info);
   }
 

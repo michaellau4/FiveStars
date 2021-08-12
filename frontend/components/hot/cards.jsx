@@ -3,7 +3,6 @@ import { GoFlame } from "react-icons/go";
 import {Link} from 'react-router-dom';
 
 const HotCards = (props) => {
-  console.log(props);
   return (
     <div className="hot-business-container">
       <div className="business-card">

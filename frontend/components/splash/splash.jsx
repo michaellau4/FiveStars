@@ -18,7 +18,6 @@ class Splash extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (!this.state.loaded) return <div>Loading...</div>;
     return (
       <div>
